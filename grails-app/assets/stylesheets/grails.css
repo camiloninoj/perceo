@@ -44,7 +44,7 @@ pre {
 
 }
 .navbar-dark, .navbar-static-top {
-    background-color: #424649;
+    background-color: #635945;
     border: 0px;
 }
 a.navbar-brand {
@@ -450,7 +450,7 @@ h8 {
 }
 
 #footer {
-    background: #f2f2f2;
+    background: #7c7c7c;
     text-align: center;
     font-size: 14px;
     padding: 20px 0 30px;
@@ -572,7 +572,7 @@ h8 {
 }
 
 #content .row > h1 {
-    font-size: 34px;
+    font-size: 52px;
     line-height: 40px;
     font-weight: 200;
     text-align: center;

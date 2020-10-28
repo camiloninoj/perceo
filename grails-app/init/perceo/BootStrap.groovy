@@ -1,5 +1,6 @@
 package perceo
 
+import co.lodiser.perceo.Cliente
 import co.lodiser.perceo.TasaFalla
 
 class BootStrap {
@@ -19,7 +20,16 @@ class BootStrap {
         new TasaFalla(sigla:'Q',tipoVehiculo:'Grua',tasa:10).save()
         new TasaFalla(sigla:'R',tipoVehiculo:'Volqueta',tasa:10).save()
         new TasaFalla(sigla:'H',tipoVehiculo:'Buseta',tasa:15).save()
+
+        new Cliente(unidadSigla:'BAS03', unidadNombre:'BATALLON DE ASPC No. 3',
+                divisionSigla:'DIV03',divisionNombre:'TERCERA DIVISION',
+                brigadaSigla:'BR03',brigadaNombre:'TERCERA BRIGADA',
+                ciudad:'Cali',
+                gestorFlotaSigla:'CP.',gestorFlotaNombre:'VALENZUELA PINZON OSCAR MAURICIO',
+                oficialS4Unidad:'CT.', oficialS4Nombre:'AMAYA TOLEDO LUIS GUILLERMO',
+                ejecutivoUnidad:'MY.',ejecutivoNombre:'GARCIA SANCHEZ JOHN A.').save()
     }
+
     def destroy = {
     }
 }
