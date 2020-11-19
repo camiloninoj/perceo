@@ -11,6 +11,8 @@
 
     <asset:stylesheet src="application.css"/>
 
+    <r:require module="export"/>
+    <export:resource />
     <g:layoutHead/>
 </head>
 

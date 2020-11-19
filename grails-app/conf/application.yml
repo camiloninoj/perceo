@@ -8,6 +8,9 @@ grails:
             # Whether to translate GORM events into Reactor events
             # Disabled by default for performance reasons
             events: false
+    plugin:
+        fields:
+            disableLookupCache: true
 info:
     app:
         name: '@info.app.name@'
@@ -107,8 +110,10 @@ dataSource:
 environments:
     development:
         dataSource:
+            username: "root"
+            password: "Asdf1234$"
             dbCreate: update
-            url: jdbc:mysql://perceo.cpm13x44je4z.us-east-2.rds.amazonaws.com:3306/perceo?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=GMT
+            url: jdbc:mysql://localhost:3306/perceo?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=GMT
     test:
         dataSource:
             dbCreate: update
