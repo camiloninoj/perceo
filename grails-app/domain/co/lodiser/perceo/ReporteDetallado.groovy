@@ -10,6 +10,9 @@ class ReporteDetallado {
     String vlrUnit
     String importeTT
     String numeroVenta
+    String ano
+    String mes
+    String mesNombre
     String diaMes
     String eds
     String placaMilitar
@@ -27,8 +30,14 @@ class ReporteDetallado {
     String textoKilometrajeRecorrido
     String textoPlantillaAlmacen
     String unidadSigla
+    String unidadNombre
     String divisionSigla
+    String divisionNombre
     String brigadaSigla
+    String brigadaNombre
+    String gestorFlota
+    String oficialS4
+    String ejecutivo
     String codigoSap
     String centroCostos
     String equipo
@@ -44,6 +53,9 @@ class ReporteDetallado {
         vlrUnit nullable:false, blank: false
         importeTT nullable:false, blank: false
         numeroVenta nullable:false, blank: false
+        ano nullable:false, blank: false
+        mes nullable:false, blank: false
+        mesNombre nullable:false, blank: false
         diaMes nullable:false, blank: false
         eds nullable:false, blank: false
         placaMilitar nullable:false, blank: false
@@ -61,8 +73,14 @@ class ReporteDetallado {
         textoKilometrajeRecorrido nullable:false, blank: false
         textoPlantillaAlmacen nullable:false, blank: false
         unidadSigla nullable:false, blank: false
+        unidadNombre nullable:false, blank: false
         divisionSigla nullable:false, blank: false
+        divisionNombre nullable:false, blank: false
         brigadaSigla nullable:false, blank: false
+        brigadaNombre nullable:false, blank: false
+        gestorFlota nullable:false, blank: false
+        oficialS4 nullable:false, blank: false
+        ejecutivo nullable:false, blank: false
         codigoSap nullable:false, blank: false
         centroCostos nullable:false, blank: false
         equipo nullable:false, blank: false

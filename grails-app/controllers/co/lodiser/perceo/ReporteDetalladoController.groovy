@@ -8,7 +8,6 @@ class ReporteDetalladoController {
     def exportService
 
     def index(Integer max) {
-        println 'index'
         params.max = Math.min(max ?: 10, 100)
 
         if(params?.f && params.f != "html"){
@@ -82,7 +81,6 @@ class ReporteDetalladoController {
             exportService.export(params.f, response.outputStream,ReporteDetallado.list(params), fields, labels, formatters, parameters)
         }
 
-        println ReporteDetallado.count()
         respond ReporteDetallado.list(params), model:[reporteDetalladoCount: ReporteDetallado.count()]
     }
 }

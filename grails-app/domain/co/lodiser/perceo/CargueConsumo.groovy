@@ -3,7 +3,6 @@ package co.lodiser.perceo
 class CargueConsumo {
 
     String nombreArchivo
-    String mes
     Double precioGlDiesel
     Double precioGlCorriente
     Double precioGlExtra
@@ -16,7 +15,6 @@ class CargueConsumo {
         nombreArchivo nullable:false, blank:false, validator:{
             if (!it.endsWith('.csv')) return ['noCSV']
         }
-        mes nullable:false, blank:false, inList: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto",  "Septiembre", "Octubre", "Noviembre", "Diciembre"]
         precioGlDiesel nullable:false, min:0D
         precioGlCorriente nullable:false, min:0D
         precioGlExtra nullable:false, min:0D

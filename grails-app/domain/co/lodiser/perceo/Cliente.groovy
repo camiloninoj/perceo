@@ -16,10 +16,10 @@ class Cliente {
     String gestorFlotaSigla
     String gestorFlotaNombre
 
-    String oficialS4Unidad
+    String oficialS4Sigla
     String oficialS4Nombre
 
-    String ejecutivoUnidad
+    String ejecutivoSigla
     String ejecutivoNombre
 
     static constraints = {
@@ -32,9 +32,9 @@ class Cliente {
         ciudad blank: false, nullable: false
         gestorFlotaSigla blank: false, nullable: false
         gestorFlotaNombre blank: false, nullable: false
-        oficialS4Unidad blank: false, nullable: false
+        oficialS4Sigla blank: false, nullable: false
         oficialS4Nombre blank: false, nullable: false
-        ejecutivoUnidad blank: false, nullable: false
+        ejecutivoSigla blank: false, nullable: false
         ejecutivoNombre blank: false, nullable: false
     }
 

@@ -26,8 +26,8 @@ class BootStrap {
                 brigadaSigla:'BR03',brigadaNombre:'TERCERA BRIGADA',
                 ciudad:'Cali',
                 gestorFlotaSigla:'CP.',gestorFlotaNombre:'VALENZUELA PINZON OSCAR MAURICIO',
-                oficialS4Unidad:'CT.', oficialS4Nombre:'AMAYA TOLEDO LUIS GUILLERMO',
-                ejecutivoUnidad:'MY.',ejecutivoNombre:'GARCIA SANCHEZ JOHN A.').save()
+                oficialS4Sigla:'CT.', oficialS4Nombre:'AMAYA TOLEDO LUIS GUILLERMO',
+                ejecutivoSigla:'MY.',ejecutivoNombre:'GARCIA SANCHEZ JOHN A.').save()
     }
 
     def destroy = {

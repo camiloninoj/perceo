@@ -9,6 +9,8 @@ class UrlMappings {
             }
         }
 
+        "/images/icons"(controller:"/assets/icons")
+        "/anexoT"(view:"/anexoT/index")
         "/"(view:"/index")
         "500"(view:'/error')
         "404"(view:'/notFound')

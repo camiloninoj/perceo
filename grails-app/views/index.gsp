@@ -26,6 +26,7 @@
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${message(code: 'reportes.label', default: 'Reportes')} <span class="caret"></span></a>
         <ul class="dropdown-menu">
             <li class="dropdown-item"><g:link controller="reporteDetallado"><g:message code="reporteDetallado.label" default="Detallado de consumos"/></g:link></li>
+            <li class="dropdown-item"><g:link controller="anexoT"><g:message code="anexoT.label" default="Anexo T"/></g:link></li>
         </ul>
     </li>
     <li class="dropdown">

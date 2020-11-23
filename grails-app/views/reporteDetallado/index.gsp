@@ -23,11 +23,6 @@
                 <g:paginate total="${reporteDetalladoCount ?: 0}" />
             </div>
             <export:formats />
-            <g:jasperReport
-                      jasper="Cherry_Landscape"
-                      format="PDF"
-                      name="Parameter Example">
-            </g:jasperReport>
         </div>
     </body>
 </html>

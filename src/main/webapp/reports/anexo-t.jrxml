@@ -1,0 +1,676 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="anexo-t" pageWidth="1300" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="1260" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0e3c5604-b98f-4db3-ae47-dbf959438b83">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Perceo BD Adapter"/>
+	<parameter name="unidadSigla" class="java.lang.String"/>
+	<parameter name="ano" class="java.lang.String"/>
+	<parameter name="mes" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT brigada_nombre, 
+	unidad_nombre, 
+	gestor_flota,
+	oficials4,
+	ejecutivo,
+	ano, 
+	mes_nombre, 
+	tipo_combustible,
+	tipo_vehiculo,
+	placa_militar,
+	(case dia_mes when '01' then cantidad else 0 end) as dia_01,
+	(case dia_mes when '02' then cantidad else 0 end) as dia_02,
+	(case dia_mes when '03' then cantidad else 0 end) as dia_03,
+	(case dia_mes when '04' then cantidad else 0 end) as dia_04,
+	(case dia_mes when '05' then cantidad else 0 end) as dia_05,
+	(case dia_mes when '06' then cantidad else 0 end) as dia_06,
+	(case dia_mes when '07' then cantidad else 0 end) as dia_07,
+	(case dia_mes when '08' then cantidad else 0 end) as dia_08,
+	(case dia_mes when '09' then cantidad else 0 end) as dia_09,
+	(case dia_mes when '10' then cantidad else 0 end) as dia_10,
+	(case dia_mes when '11' then cantidad else 0 end) as dia_11,
+	(case dia_mes when '12' then cantidad else 0 end) as dia_12,
+	(case dia_mes when '13' then cantidad else 0 end) as dia_13,
+	(case dia_mes when '14' then cantidad else 0 end) as dia_14,
+	(case dia_mes when '15' then cantidad else 0 end) as dia_15,
+	(case dia_mes when '16' then cantidad else 0 end) as dia_16,
+	(case dia_mes when '17' then cantidad else 0 end) as dia_17,
+	(case dia_mes when '18' then cantidad else 0 end) as dia_18,
+	(case dia_mes when '19' then cantidad else 0 end) as dia_19,
+	(case dia_mes when '20' then cantidad else 0 end) as dia_20,
+	(case dia_mes when '21' then cantidad else 0 end) as dia_21,
+	(case dia_mes when '22' then cantidad else 0 end) as dia_22,
+	(case dia_mes when '23' then cantidad else 0 end) as dia_23,
+	(case dia_mes when '24' then cantidad else 0 end) as dia_24,
+	(case dia_mes when '25' then cantidad else 0 end) as dia_25,
+	(case dia_mes when '26' then cantidad else 0 end) as dia_26,
+	(case dia_mes when '27' then cantidad else 0 end) as dia_27,
+	(case dia_mes when '28' then cantidad else 0 end) as dia_28,
+	(case dia_mes when '29' then cantidad else 0 end) as dia_29,
+	(case dia_mes when '30' then cantidad else 0 end) as dia_30,
+	(case dia_mes when '31' then cantidad else 0 end) as dia_31
+FROM reporte_detallado
+where unidad_sigla = $P{unidadSigla}
+	and ano = $P{ano}
+	and mes =  $P{mes}]]>
+	</queryString>
+	<field name="brigada_nombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="brigada_nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="brigada_nombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="reporte_detallado"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="unidad_nombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="unidad_nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="unidad_nombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="reporte_detallado"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="gestor_flota" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="gestor_flota"/>
+		<property name="com.jaspersoft.studio.field.label" value="gestor_flota"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="reporte_detallado"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="oficials4" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="oficials4"/>
+		<property name="com.jaspersoft.studio.field.label" value="oficials4"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="reporte_detallado"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ejecutivo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ejecutivo"/>
+		<property name="com.jaspersoft.studio.field.label" value="ejecutivo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="reporte_detallado"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ano" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ano"/>
+		<property name="com.jaspersoft.studio.field.label" value="ano"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="reporte_detallado"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mes_nombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="mes_nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="mes_nombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="reporte_detallado"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipo_combustible" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="tipo_combustible"/>
+		<property name="com.jaspersoft.studio.field.label" value="tipo_combustible"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="reporte_detallado"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipo_vehiculo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="tipo_vehiculo"/>
+		<property name="com.jaspersoft.studio.field.label" value="tipo_vehiculo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="reporte_detallado"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="placa_militar" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="placa_militar"/>
+		<property name="com.jaspersoft.studio.field.label" value="placa_militar"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="reporte_detallado"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dia_01" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dia_01"/>
+		<property name="com.jaspersoft.studio.field.label" value="dia_01"/>
+	</field>
+	<field name="dia_02" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dia_02"/>
+		<property name="com.jaspersoft.studio.field.label" value="dia_02"/>
+	</field>
+	<field name="dia_03" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dia_03"/>
+		<property name="com.jaspersoft.studio.field.label" value="dia_03"/>
+	</field>
+	<field name="dia_04" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dia_04"/>
+		<property name="com.jaspersoft.studio.field.label" value="dia_04"/>
+	</field>
+	<field name="dia_05" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dia_05"/>
+		<property name="com.jaspersoft.studio.field.label" value="dia_05"/>
+	</field>
+	<field name="dia_06" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dia_06"/>
+		<property name="com.jaspersoft.studio.field.label" value="dia_06"/>
+	</field>
+	<field name="dia_07" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dia_07"/>
+		<property name="com.jaspersoft.studio.field.label" value="dia_07"/>
+	</field>
+	<field name="dia_08" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dia_08"/>
+		<property name="com.jaspersoft.studio.field.label" value="dia_08"/>
+	</field>
+	<field name="dia_09" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dia_09"/>
+		<property name="com.jaspersoft.studio.field.label" value="dia_09"/>
+	</field>
+	<field name="dia_10" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dia_10"/>
+		<property name="com.jaspersoft.studio.field.label" value="dia_10"/>
+	</field>
+	<field name="dia_11" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dia_11"/>
+		<property name="com.jaspersoft.studio.field.label" value="dia_11"/>
+	</field>
+	<field name="dia_12" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dia_12"/>
+		<property name="com.jaspersoft.studio.field.label" value="dia_12"/>
+	</field>
+	<field name="dia_13" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dia_13"/>
+		<property name="com.jaspersoft.studio.field.label" value="dia_13"/>
+	</field>
+	<field name="dia_14" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dia_14"/>
+		<property name="com.jaspersoft.studio.field.label" value="dia_14"/>
+	</field>
+	<field name="dia_15" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dia_15"/>
+		<property name="com.jaspersoft.studio.field.label" value="dia_15"/>
+	</field>
+	<field name="dia_16" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dia_16"/>
+		<property name="com.jaspersoft.studio.field.label" value="dia_16"/>
+	</field>
+	<field name="dia_17" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dia_17"/>
+		<property name="com.jaspersoft.studio.field.label" value="dia_17"/>
+	</field>
+	<field name="dia_18" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dia_18"/>
+		<property name="com.jaspersoft.studio.field.label" value="dia_18"/>
+	</field>
+	<field name="dia_19" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dia_19"/>
+		<property name="com.jaspersoft.studio.field.label" value="dia_19"/>
+	</field>
+	<field name="dia_20" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dia_20"/>
+		<property name="com.jaspersoft.studio.field.label" value="dia_20"/>
+	</field>
+	<field name="dia_21" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dia_21"/>
+		<property name="com.jaspersoft.studio.field.label" value="dia_21"/>
+	</field>
+	<field name="dia_22" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dia_22"/>
+		<property name="com.jaspersoft.studio.field.label" value="dia_22"/>
+	</field>
+	<field name="dia_23" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dia_23"/>
+		<property name="com.jaspersoft.studio.field.label" value="dia_23"/>
+	</field>
+	<field name="dia_24" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dia_24"/>
+		<property name="com.jaspersoft.studio.field.label" value="dia_24"/>
+	</field>
+	<field name="dia_25" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dia_25"/>
+		<property name="com.jaspersoft.studio.field.label" value="dia_25"/>
+	</field>
+	<field name="dia_26" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dia_26"/>
+		<property name="com.jaspersoft.studio.field.label" value="dia_26"/>
+	</field>
+	<field name="dia_27" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dia_27"/>
+		<property name="com.jaspersoft.studio.field.label" value="dia_27"/>
+	</field>
+	<field name="dia_28" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dia_28"/>
+		<property name="com.jaspersoft.studio.field.label" value="dia_28"/>
+	</field>
+	<field name="dia_29" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dia_29"/>
+		<property name="com.jaspersoft.studio.field.label" value="dia_29"/>
+	</field>
+	<field name="dia_30" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dia_30"/>
+		<property name="com.jaspersoft.studio.field.label" value="dia_30"/>
+	</field>
+	<field name="dia_31" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dia_31"/>
+		<property name="com.jaspersoft.studio.field.label" value="dia_31"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="510" y="0" width="190" height="30" uuid="5ced1303-c132-4eaf-8097-88e0278d1616"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="22"/>
+				</textElement>
+				<text><![CDATA[ANEXO T]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="190" y="5" width="190" height="20" uuid="a472b3cf-9097-4a99-9ba2-fde2c3f42a53">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{unidadSigla}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="150" splitType="Stretch">
+			<staticText>
+				<reportElement x="120" y="0" width="100" height="20" forecolor="#FA0E0A" uuid="9ca5a58b-289f-4dbf-9836-f98a3ff23312"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[RESTRINGIDO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="20" width="190" height="20" forecolor="#000000" uuid="b53315d3-93cc-4f48-a3a8-a9501688b89f"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[FUERZAS MILITARES DE COLOMBIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="40" width="190" height="20" forecolor="#000000" uuid="60586256-9df2-4a82-8c4d-ba58e3ccac4e"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[EJÉRCITO NACIONAL]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="120" y="60" width="190" height="20" uuid="6f1a9640-cac4-45d0-9345-352aaaa465ab">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{brigada_nombre}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="10" y="0" width="110" height="130" uuid="6bf36ff6-9472-45b7-bd98-d829db90267e"/>
+				<imageExpression><![CDATA["../../reports/escudo.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="120" y="80" width="190" height="20" uuid="4dcc261a-c3a2-42d6-ac65-0bb1b9102fc7">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{unidad_nombre}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="120" y="100" width="190" height="20" forecolor="#000000" uuid="3adac415-255a-468e-a812-2c7ca3e3dd15"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[ANEXTO "T"]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="120" y="120" width="400" height="20" uuid="b77a0cf5-ae8d-4394-9ddd-d788b600cb60">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["CONSUMO DE  COMBUSTIBLE ENTREGADO MES DE "+$F{mes_nombre}+" DE "+$F{ano}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="62" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="10" y="40" width="100" height="22" backcolor="#C1C5E8" uuid="bdfa0334-a632-4102-98dc-55dfb5b3f1c7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[TIPO COMBUSTIBLE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="110" y="40" width="100" height="22" backcolor="#C1C5E8" uuid="59dcbfb7-0e05-496a-a676-68a75f46361b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[TIPO VEHICULO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="210" y="40" width="100" height="22" backcolor="#C1C5E8" uuid="16d90118-3831-4724-b003-127cf8bdcd99"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[PLACA MILITAR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="310" y="18" width="930" height="22" backcolor="#C1C5E8" uuid="cdbfdf54-daaa-4f2f-bdb0-2da149ae3eaf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[DIA MES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="310" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="8dab653b-8f08-4d2f-a1ee-2d4a76d27011"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[01]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="340" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="fdc51a96-21ba-44b1-8a7a-28e938b59a78"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[02]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="400" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="2aaa6a91-a4f5-481a-b378-ba2c2ad09a8a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[04]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="370" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="06682e96-f94c-42b0-aa31-4f76817e5291"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[03]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="430" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="4e824e34-dd18-45ec-a888-bf61d8c087ab"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[05]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="460" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="2e3aab1b-9fc5-4555-8f8d-1f2931aa1bc4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[06]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="490" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="b74edc17-1c4d-41bd-bf58-c49918628901"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[07]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="520" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="4adfe827-1b06-4fd5-bc78-c332ebced166"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[08]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="580" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="819252ec-5e87-460a-9f2b-4ace9d0173f1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[10]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="550" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="5cc4f470-e23c-465e-a96d-ce4e74e3c164"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[09]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="820" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="d78fb2a8-c7ad-49ec-9de7-d391910c300e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[18]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="670" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="e60d7165-134b-4202-86cc-c840e89aacb8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[13]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="850" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="97b92759-f796-4c1c-bda3-33dde2060905"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[19]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="880" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="b5a572d0-958a-47d5-8bc1-9490f5873580"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[20]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="610" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="c8f5a2e5-9bbb-40c3-b24b-d87ec5add4d0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[11]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="790" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="714d672e-efd0-48da-8106-1fb626bb5e9a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[17]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="640" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="2548939b-d2eb-4f3c-a806-b739450be644"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[12]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="760" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="4efb156b-9c10-4b83-bae7-dd9c37ed165d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[16]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="700" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="f0da39f2-45db-4ba2-ba23-0bab1b4b2fd4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[14]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="730" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="5b53ac00-27d4-46a0-8746-78f149f3f3dc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[15]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1120" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="b518640a-6405-4673-8eb2-39387eb3766b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[28]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="970" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="1d60faef-d750-45d8-a4b8-697b39b12155"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[23]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1150" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="a2b9efa2-e2c0-435f-8078-95e14715ada3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[29]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1180" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="8436bfae-78b4-4edd-8e9c-edca8e3d57cd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[30]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="910" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="a0cbfa45-5d27-46a6-abb4-f48d5a0b4a4d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[21]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1090" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="a2135daa-73f9-4ca2-a79a-5f1accbbc48b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[27]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="940" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="96e9a30c-9862-42ba-b733-d0a9d6c045ed"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[22]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1060" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="d8f5e873-abab-4603-9009-0dc6570869c1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[26]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1000" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="25655b7b-6ca6-4a49-9ca3-daeaa64e1414"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[24]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1030" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="9bd60149-9316-4a50-97a8-49e4d768594a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[25]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1210" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="8e12fb65-e62e-4dc7-b896-78c5f324d896"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[31]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="19" splitType="Stretch">
+			<textField>
+				<reportElement x="210" y="0" width="100" height="19" uuid="d7416e25-3ff2-473c-8f58-5fe5b5b49329"/>
+				<textFieldExpression><![CDATA[$F{placa_militar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="0" width="100" height="19" uuid="5f2e42b7-520f-49f3-90d5-f12ec177e5a2"/>
+				<textFieldExpression><![CDATA[$F{tipo_combustible}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="0" width="100" height="19" uuid="173a8acd-de6a-4928-8b0c-c6c6efa7258c"/>
+				<textFieldExpression><![CDATA[$F{tipo_vehiculo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="310" y="0" width="30" height="19" uuid="bf588b24-b7fa-4901-847f-f9980543b24e"/>
+				<textFieldExpression><![CDATA[$F{dia_01}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="340" y="0" width="30" height="19" uuid="6139ff56-d95d-474d-935b-6cab346b5828"/>
+				<textFieldExpression><![CDATA[$F{dia_02}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="370" y="0" width="30" height="19" uuid="a30beda7-2e8a-4d45-99fb-7696929adaa8"/>
+				<textFieldExpression><![CDATA[$F{dia_03}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="0" width="30" height="19" uuid="663babb3-78e6-4159-8833-c9f1a1de3935"/>
+				<textFieldExpression><![CDATA[$F{dia_04}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="0" width="30" height="19" uuid="663577a4-f9a3-44d8-9a8e-5d228e82ee96"/>
+				<textFieldExpression><![CDATA[$F{dia_05}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="460" y="0" width="30" height="19" uuid="d8b2338a-7970-4b03-a39e-916118ed42ef"/>
+				<textFieldExpression><![CDATA[$F{dia_06}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="490" y="0" width="30" height="19" uuid="a4073355-1b0c-4421-a560-723d0429bb85"/>
+				<textFieldExpression><![CDATA[$F{dia_07}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="520" y="0" width="30" height="19" uuid="3637857f-fcc4-409c-bdae-3540bfc2fa80"/>
+				<textFieldExpression><![CDATA[$F{dia_08}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="550" y="0" width="30" height="19" uuid="d828ac9b-dc54-481b-a76e-034e9122ece6"/>
+				<textFieldExpression><![CDATA[$F{dia_09}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="580" y="0" width="30" height="19" uuid="6e5861ad-e5e2-4a9a-a46b-99909f0c7d5e"/>
+				<textFieldExpression><![CDATA[$F{dia_10}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="610" y="0" width="30" height="19" uuid="68acee33-6954-4bb3-8758-84ae71aae426"/>
+				<textFieldExpression><![CDATA[$F{dia_11}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="640" y="0" width="30" height="19" uuid="4360fd84-ebfa-49b2-9f2e-48be39c7873b"/>
+				<textFieldExpression><![CDATA[$F{dia_12}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="670" y="0" width="30" height="19" uuid="796e7c3d-debe-4804-9080-8636397b1452"/>
+				<textFieldExpression><![CDATA[$F{dia_13}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="700" y="0" width="30" height="19" uuid="70e6a8fb-ba61-4a03-9dd1-b694802abe30"/>
+				<textFieldExpression><![CDATA[$F{dia_14}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="730" y="0" width="30" height="19" uuid="6824d4f0-9855-49fc-a7ec-fc762e860421"/>
+				<textFieldExpression><![CDATA[$F{dia_15}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="760" y="0" width="30" height="19" uuid="8c0daa4d-0ca0-44f4-b88f-6a3fe919d71c"/>
+				<textFieldExpression><![CDATA[$F{dia_16}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="790" y="0" width="30" height="19" uuid="a02eeb13-36f7-4ca5-8c98-09f60283a243"/>
+				<textFieldExpression><![CDATA[$F{dia_17}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="820" y="0" width="30" height="19" uuid="28c887c0-1699-4b6e-96d5-c0587616f1e4"/>
+				<textFieldExpression><![CDATA[$F{dia_18}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="850" y="0" width="30" height="19" uuid="4a79a208-7ff4-4e61-9c58-74a8215ee6f6"/>
+				<textFieldExpression><![CDATA[$F{dia_19}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="880" y="0" width="30" height="19" uuid="ad385f57-92c4-42ad-ad5d-726c20039287"/>
+				<textFieldExpression><![CDATA[$F{dia_20}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="910" y="0" width="30" height="19" uuid="afc2002d-df62-47a7-91a8-366210895e34"/>
+				<textFieldExpression><![CDATA[$F{dia_21}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="940" y="0" width="30" height="19" uuid="238b0104-3f56-4f94-83e7-defc99eee435"/>
+				<textFieldExpression><![CDATA[$F{dia_22}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="970" y="0" width="30" height="19" uuid="c73062b9-5a92-430e-8eae-c67cf71c86c2"/>
+				<textFieldExpression><![CDATA[$F{dia_23}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1000" y="0" width="30" height="19" uuid="82a1018a-ffc4-4fe8-8393-ebb8c5b8685a"/>
+				<textFieldExpression><![CDATA[$F{dia_24}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1030" y="0" width="30" height="19" uuid="dbda60bf-cbdd-4c22-bee7-f20fd2518b30"/>
+				<textFieldExpression><![CDATA[$F{dia_25}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1060" y="0" width="30" height="19" uuid="fc66dc7b-45b3-4048-89db-85e11b4cb966"/>
+				<textFieldExpression><![CDATA[$F{dia_26}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1090" y="0" width="30" height="19" uuid="4c903627-25a0-415c-97a2-218ecb505e91"/>
+				<textFieldExpression><![CDATA[$F{dia_27}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1120" y="0" width="30" height="19" uuid="d9b0a2c9-af51-4872-874a-18802a2758f1"/>
+				<textFieldExpression><![CDATA[$F{dia_28}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1150" y="0" width="30" height="19" uuid="4e77ea3d-6c6b-4dce-8001-9ad3bce39295"/>
+				<textFieldExpression><![CDATA[$F{dia_29}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1180" y="0" width="30" height="19" uuid="2c93d194-92f2-451c-9b33-c7ba8076f319"/>
+				<textFieldExpression><![CDATA[$F{dia_30}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1210" y="0" width="30" height="19" uuid="283ddfde-499d-492d-ac6b-2e4f4b466e57"/>
+				<textFieldExpression><![CDATA[$F{dia_31}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<lastPageFooter>
+		<band height="79">
+			<staticText>
+				<reportElement x="110" y="49" width="100" height="20" uuid="c3325fa8-41b1-4a2d-a7af-69395b036298"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[GESTOR DE FLOTA]]></text>
+			</staticText>
+			<line direction="BottomUp">
+				<reportElement x="60" y="49" width="190" height="1" uuid="c3c1d58d-26f9-4387-bff5-2dd1f6e1fe1a"/>
+			</line>
+			<textField>
+				<reportElement x="60" y="30" width="190" height="20" uuid="81b663dc-0419-4047-b8eb-8556db87cd1c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{gestor_flota}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="440" y="49" width="100" height="20" uuid="0914fb6f-3aa5-4005-bb22-d159b70749c8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[OFICIAL S-4]]></text>
+			</staticText>
+			<line direction="BottomUp">
+				<reportElement x="390" y="49" width="190" height="1" uuid="8bee18e8-e56c-460e-8137-2ca9961c4e58"/>
+			</line>
+			<textField>
+				<reportElement x="390" y="30" width="190" height="20" uuid="1b97c36c-adb4-442a-8a2d-2cba681c8694"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{oficials4}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="675" y="49" width="200" height="20" uuid="873b4199-0adf-49c5-977e-09f34f2ef5d5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[EJECUTIVO Y SEGUNDO COMANDANTE]]></text>
+			</staticText>
+			<line direction="BottomUp">
+				<reportElement x="680" y="49" width="190" height="1" uuid="f45dc280-16be-4f82-b8f9-127ab7806f89"/>
+			</line>
+			<textField>
+				<reportElement x="680" y="30" width="190" height="20" uuid="f69e28d7-d81c-4762-b34f-8f3890e5f58c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{ejecutivo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+</jasperReport>

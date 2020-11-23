@@ -18,7 +18,7 @@ class Consumo {
     static hasOne = [reporte:ReporteDetallado]
     static belongsTo = [cargue: CargueConsumo]
 
-    def beforeValidate() {
+    def afterInsert() {
         reporte = new ReporteDetallado()
         reporte.consumo = this
         reporte.fecha = new SimpleDateFormat('dd/MM/yyyy').format(fecha)
@@ -39,6 +39,9 @@ class Consumo {
 
         reporte.importeTT = importeTT
         reporte.numeroVenta = numeroVenta
+        reporte.ano = new SimpleDateFormat('yyyy').format(fecha)
+        reporte.mes = new SimpleDateFormat('MM').format(fecha)
+        reporte.mesNombre = new SimpleDateFormat('MMMM').format(fecha)
         reporte.diaMes = new SimpleDateFormat('dd').format(fecha)
         reporte.eds = eds
         reporte.placaMilitar = vehiculo.placaMilitar
@@ -54,14 +57,19 @@ class Consumo {
         reporte.textoCombusitbleBono = "CONSUMO DE BONOS "+reporte.diaMes
         reporte.textoConsumoG = "CONSUMO_COMBUSTIBLE_G "+vehiculo.placaMilitar
         reporte.textoKilometrajeRecorrido = "KILOMETRAJE RECORRIDO "+vehiculo.placaMilitar
-        reporte.textoPlantillaAlmacen = "CONSUMO "+cargue.mes+" DIA "+reporte.diaMes
+        reporte.textoPlantillaAlmacen = "CONSUMO "+reporte.mesNombre+" DIA "+reporte.diaMes
         reporte.unidadSigla = vehiculo.cliente.unidadSigla
+        reporte.unidadNombre = vehiculo.cliente.unidadNombre
         reporte.divisionSigla = vehiculo.cliente.divisionSigla
+        reporte.divisionNombre = vehiculo.cliente.divisionNombre
         reporte.brigadaSigla = vehiculo.cliente.brigadaSigla
+        reporte.brigadaNombre = vehiculo.cliente.brigadaNombre
+        reporte.gestorFlota = vehiculo.cliente.gestorFlotaSigla+" "+vehiculo.cliente.gestorFlotaNombre
+        reporte.oficialS4 = vehiculo.cliente.oficialS4Sigla+" "+vehiculo.cliente.oficialS4Nombre
+        reporte.ejecutivo = vehiculo.cliente.ejecutivoSigla+" "+vehiculo.cliente.ejecutivoNombre
         reporte.codigoSap = codigoSap
         reporte.centroCostos = vehiculo.centroCostos
         reporte.equipo = vehiculo.equipo
-        reporte
     }
 
     static constraints = {
@@ -75,6 +83,7 @@ class Consumo {
         puntoMedidaConsumo nullable:false, min:0
         puntoMedidaKm nullable:false, min:0
         codigoSap nullable:false, blank: false
+        reporte nullable: true
     }
 
     String toString(){
