@@ -40,19 +40,17 @@ class CargueConsumoController {
                def reader = archivo.inputStream.
                        toCsvReader([charset:'UTF-8',skipLines:1,separatorChar:';',batchSize:50])
 
-                reader.eachLine { tokens  ->
-                    cargueConsumo.addToConsumos(new Consumo (
+                reader.eachLine { tokens ->
+                    cargueConsumo.addToConsumos(new Consumo(
                             fecha: new SimpleDateFormat('dd/MM/yyyy').parse(tokens[0]),
                             vehiculo: Vehiculo.findByPlacaCivil(tokens[1]),
                             tipoCombustible: tokens[2],
-                            cantidad: NumberFormat.getInstance().parse(tokens[3]),
-                            importeTT: NumberFormat.getInstance().parse(tokens[4]),
-                            numeroVenta: tokens[5],
-                            eds: tokens[6],
-                            puntoMedidaConsumo: NumberFormat.getInstance().parse(tokens[7]),
-                            puntoMedidaKm: NumberFormat.getInstance().parse(tokens[8]),
-                            codigoSap: tokens[9],
-                            cargue:cargueConsumo)
+                            vlrUnit: tokens[3],
+                            cantidad: NumberFormat.getInstance().parse(tokens[4]),
+                            importeTT: NumberFormat.getInstance().parse(tokens[5]),
+                            numeroVenta: tokens[6],
+                            eds: tokens[7],
+                            codigoSap: tokens[8])
                     )
                 }
 

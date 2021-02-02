@@ -19,7 +19,7 @@
             </g:if>
             <g:jasperReport
                       jasper="anexo-t"
-                      format="PDF,HTML,XML,CSV,XLS,RTF,TEXT,ODT,ODS,DOCX,XLSX,PPTX"
+                      format="PDF,XLSX"
                       name="Anexo-T">
               <div class="fieldcontain">
                   <label for="unidadSigla">Cliente</label>

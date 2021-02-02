@@ -9,7 +9,7 @@ class UrlMappings {
             }
         }
 
-        "/images/icons"(controller:"/assets/icons")
+        "/images/**.gif"(controller:"image")
         "/anexoT"(view:"/anexoT/index")
         "/"(view:"/index")
         "500"(view:'/error')

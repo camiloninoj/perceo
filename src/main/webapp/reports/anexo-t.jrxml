@@ -17,41 +17,51 @@
 	tipo_combustible,
 	tipo_vehiculo,
 	placa_militar,
-	(case dia_mes when '01' then cantidad else 0 end) as dia_01,
-	(case dia_mes when '02' then cantidad else 0 end) as dia_02,
-	(case dia_mes when '03' then cantidad else 0 end) as dia_03,
-	(case dia_mes when '04' then cantidad else 0 end) as dia_04,
-	(case dia_mes when '05' then cantidad else 0 end) as dia_05,
-	(case dia_mes when '06' then cantidad else 0 end) as dia_06,
-	(case dia_mes when '07' then cantidad else 0 end) as dia_07,
-	(case dia_mes when '08' then cantidad else 0 end) as dia_08,
-	(case dia_mes when '09' then cantidad else 0 end) as dia_09,
-	(case dia_mes when '10' then cantidad else 0 end) as dia_10,
-	(case dia_mes when '11' then cantidad else 0 end) as dia_11,
-	(case dia_mes when '12' then cantidad else 0 end) as dia_12,
-	(case dia_mes when '13' then cantidad else 0 end) as dia_13,
-	(case dia_mes when '14' then cantidad else 0 end) as dia_14,
-	(case dia_mes when '15' then cantidad else 0 end) as dia_15,
-	(case dia_mes when '16' then cantidad else 0 end) as dia_16,
-	(case dia_mes when '17' then cantidad else 0 end) as dia_17,
-	(case dia_mes when '18' then cantidad else 0 end) as dia_18,
-	(case dia_mes when '19' then cantidad else 0 end) as dia_19,
-	(case dia_mes when '20' then cantidad else 0 end) as dia_20,
-	(case dia_mes when '21' then cantidad else 0 end) as dia_21,
-	(case dia_mes when '22' then cantidad else 0 end) as dia_22,
-	(case dia_mes when '23' then cantidad else 0 end) as dia_23,
-	(case dia_mes when '24' then cantidad else 0 end) as dia_24,
-	(case dia_mes when '25' then cantidad else 0 end) as dia_25,
-	(case dia_mes when '26' then cantidad else 0 end) as dia_26,
-	(case dia_mes when '27' then cantidad else 0 end) as dia_27,
-	(case dia_mes when '28' then cantidad else 0 end) as dia_28,
-	(case dia_mes when '29' then cantidad else 0 end) as dia_29,
-	(case dia_mes when '30' then cantidad else 0 end) as dia_30,
-	(case dia_mes when '31' then cantidad else 0 end) as dia_31
+	sum(case dia_mes when '01' then cantidad else null end) as dia_01,
+	sum(case dia_mes when '02' then cantidad else null end) as dia_02,
+	sum(case dia_mes when '03' then cantidad else null end) as dia_03,
+	sum(case dia_mes when '04' then cantidad else null end) as dia_04,
+	sum(case dia_mes when '05' then cantidad else null end) as dia_05,
+	sum(case dia_mes when '06' then cantidad else null end) as dia_06,
+	sum(case dia_mes when '07' then cantidad else null end) as dia_07,
+	sum(case dia_mes when '08' then cantidad else null end) as dia_08,
+	sum(case dia_mes when '09' then cantidad else null end) as dia_09,
+	sum(case dia_mes when '10' then cantidad else null end) as dia_10,
+	sum(case dia_mes when '11' then cantidad else null end) as dia_11,
+	sum(case dia_mes when '12' then cantidad else null end) as dia_12,
+	sum(case dia_mes when '13' then cantidad else null end) as dia_13,
+	sum(case dia_mes when '14' then cantidad else null end) as dia_14,
+	sum(case dia_mes when '15' then cantidad else null end) as dia_15,
+	sum(case dia_mes when '16' then cantidad else null end) as dia_16,
+	sum(case dia_mes when '17' then cantidad else null end) as dia_17,
+	sum(case dia_mes when '18' then cantidad else null end) as dia_18,
+	sum(case dia_mes when '19' then cantidad else null end) as dia_19,
+	sum(case dia_mes when '20' then cantidad else null end) as dia_20,
+	sum(case dia_mes when '21' then cantidad else null end) as dia_21,
+	sum(case dia_mes when '22' then cantidad else null end) as dia_22,
+	sum(case dia_mes when '23' then cantidad else null end) as dia_23,
+	sum(case dia_mes when '24' then cantidad else null end) as dia_24,
+	sum(case dia_mes when '25' then cantidad else null end) as dia_25,
+	sum(case dia_mes when '26' then cantidad else null end) as dia_26,
+	sum(case dia_mes when '27' then cantidad else null end) as dia_27,
+	sum(case dia_mes when '28' then cantidad else null end) as dia_28,
+	sum(case dia_mes when '29' then cantidad else null end) as dia_29,
+	sum(case dia_mes when '30' then cantidad else null end) as dia_30,
+	sum(case dia_mes when '31' then cantidad else null end) as dia_31
 FROM reporte_detallado
 where unidad_sigla = $P{unidadSigla}
 	and ano = $P{ano}
-	and mes =  $P{mes}]]>
+	and mes =  $P{mes}
+group by brigada_nombre, 
+	unidad_nombre, 
+	gestor_flota,
+	oficials4,
+	ejecutivo,
+	ano, 
+	mes_nombre, 
+	tipo_combustible,
+	tipo_vehiculo,
+	placa_militar]]>
 	</queryString>
 	<field name="brigada_nombre" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="brigada_nombre"/>
@@ -249,35 +259,27 @@ where unidad_sigla = $P{unidadSigla}
 				</textElement>
 				<text><![CDATA[ANEXO T]]></text>
 			</staticText>
-			<textField>
-				<reportElement x="190" y="5" width="190" height="20" uuid="a472b3cf-9097-4a99-9ba2-fde2c3f42a53">
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<textElement textAlignment="Left" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$P{unidadSigla}]]></textFieldExpression>
-			</textField>
 		</band>
 	</title>
 	<pageHeader>
 		<band height="150" splitType="Stretch">
 			<staticText>
-				<reportElement x="120" y="0" width="100" height="20" forecolor="#FA0E0A" uuid="9ca5a58b-289f-4dbf-9836-f98a3ff23312"/>
+				<reportElement x="160" y="0" width="100" height="20" forecolor="#FA0E0A" uuid="9ca5a58b-289f-4dbf-9836-f98a3ff23312"/>
 				<textElement verticalAlignment="Middle"/>
 				<text><![CDATA[RESTRINGIDO]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="120" y="20" width="190" height="20" forecolor="#000000" uuid="b53315d3-93cc-4f48-a3a8-a9501688b89f"/>
+				<reportElement x="160" y="20" width="190" height="20" forecolor="#000000" uuid="b53315d3-93cc-4f48-a3a8-a9501688b89f"/>
 				<textElement verticalAlignment="Middle"/>
 				<text><![CDATA[FUERZAS MILITARES DE COLOMBIA]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="120" y="40" width="190" height="20" forecolor="#000000" uuid="60586256-9df2-4a82-8c4d-ba58e3ccac4e"/>
+				<reportElement x="160" y="40" width="190" height="20" forecolor="#000000" uuid="60586256-9df2-4a82-8c4d-ba58e3ccac4e"/>
 				<textElement verticalAlignment="Middle"/>
 				<text><![CDATA[EJÉRCITO NACIONAL]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="120" y="60" width="190" height="20" uuid="6f1a9640-cac4-45d0-9345-352aaaa465ab">
+				<reportElement x="160" y="60" width="190" height="20" uuid="6f1a9640-cac4-45d0-9345-352aaaa465ab">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -285,11 +287,11 @@ where unidad_sigla = $P{unidadSigla}
 				<textFieldExpression><![CDATA[$F{brigada_nombre}]]></textFieldExpression>
 			</textField>
 			<image>
-				<reportElement x="10" y="0" width="110" height="130" uuid="6bf36ff6-9472-45b7-bd98-d829db90267e"/>
+				<reportElement x="50" y="0" width="110" height="130" uuid="6bf36ff6-9472-45b7-bd98-d829db90267e"/>
 				<imageExpression><![CDATA["../../reports/escudo.png"]]></imageExpression>
 			</image>
 			<textField>
-				<reportElement x="120" y="80" width="190" height="20" uuid="4dcc261a-c3a2-42d6-ac65-0bb1b9102fc7">
+				<reportElement x="160" y="80" width="190" height="20" uuid="4dcc261a-c3a2-42d6-ac65-0bb1b9102fc7">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -297,12 +299,12 @@ where unidad_sigla = $P{unidadSigla}
 				<textFieldExpression><![CDATA[$F{unidad_nombre}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="120" y="100" width="190" height="20" forecolor="#000000" uuid="3adac415-255a-468e-a812-2c7ca3e3dd15"/>
+				<reportElement x="160" y="100" width="190" height="20" forecolor="#000000" uuid="3adac415-255a-468e-a812-2c7ca3e3dd15"/>
 				<textElement verticalAlignment="Middle"/>
 				<text><![CDATA[ANEXTO "T"]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="120" y="120" width="400" height="20" uuid="b77a0cf5-ae8d-4394-9ddd-d788b600cb60">
+				<reportElement x="160" y="120" width="400" height="20" uuid="b77a0cf5-ae8d-4394-9ddd-d788b600cb60">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -504,127 +506,127 @@ where unidad_sigla = $P{unidadSigla}
 				<reportElement x="110" y="0" width="100" height="19" uuid="173a8acd-de6a-4928-8b0c-c6c6efa7258c"/>
 				<textFieldExpression><![CDATA[$F{tipo_vehiculo}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="310" y="0" width="30" height="19" uuid="bf588b24-b7fa-4901-847f-f9980543b24e"/>
 				<textFieldExpression><![CDATA[$F{dia_01}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="340" y="0" width="30" height="19" uuid="6139ff56-d95d-474d-935b-6cab346b5828"/>
 				<textFieldExpression><![CDATA[$F{dia_02}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="370" y="0" width="30" height="19" uuid="a30beda7-2e8a-4d45-99fb-7696929adaa8"/>
 				<textFieldExpression><![CDATA[$F{dia_03}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="400" y="0" width="30" height="19" uuid="663babb3-78e6-4159-8833-c9f1a1de3935"/>
 				<textFieldExpression><![CDATA[$F{dia_04}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="430" y="0" width="30" height="19" uuid="663577a4-f9a3-44d8-9a8e-5d228e82ee96"/>
 				<textFieldExpression><![CDATA[$F{dia_05}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="460" y="0" width="30" height="19" uuid="d8b2338a-7970-4b03-a39e-916118ed42ef"/>
 				<textFieldExpression><![CDATA[$F{dia_06}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="490" y="0" width="30" height="19" uuid="a4073355-1b0c-4421-a560-723d0429bb85"/>
 				<textFieldExpression><![CDATA[$F{dia_07}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="520" y="0" width="30" height="19" uuid="3637857f-fcc4-409c-bdae-3540bfc2fa80"/>
 				<textFieldExpression><![CDATA[$F{dia_08}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="550" y="0" width="30" height="19" uuid="d828ac9b-dc54-481b-a76e-034e9122ece6"/>
 				<textFieldExpression><![CDATA[$F{dia_09}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="580" y="0" width="30" height="19" uuid="6e5861ad-e5e2-4a9a-a46b-99909f0c7d5e"/>
 				<textFieldExpression><![CDATA[$F{dia_10}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="610" y="0" width="30" height="19" uuid="68acee33-6954-4bb3-8758-84ae71aae426"/>
 				<textFieldExpression><![CDATA[$F{dia_11}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="640" y="0" width="30" height="19" uuid="4360fd84-ebfa-49b2-9f2e-48be39c7873b"/>
 				<textFieldExpression><![CDATA[$F{dia_12}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="670" y="0" width="30" height="19" uuid="796e7c3d-debe-4804-9080-8636397b1452"/>
 				<textFieldExpression><![CDATA[$F{dia_13}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="700" y="0" width="30" height="19" uuid="70e6a8fb-ba61-4a03-9dd1-b694802abe30"/>
 				<textFieldExpression><![CDATA[$F{dia_14}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="730" y="0" width="30" height="19" uuid="6824d4f0-9855-49fc-a7ec-fc762e860421"/>
 				<textFieldExpression><![CDATA[$F{dia_15}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="760" y="0" width="30" height="19" uuid="8c0daa4d-0ca0-44f4-b88f-6a3fe919d71c"/>
 				<textFieldExpression><![CDATA[$F{dia_16}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="790" y="0" width="30" height="19" uuid="a02eeb13-36f7-4ca5-8c98-09f60283a243"/>
 				<textFieldExpression><![CDATA[$F{dia_17}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="820" y="0" width="30" height="19" uuid="28c887c0-1699-4b6e-96d5-c0587616f1e4"/>
 				<textFieldExpression><![CDATA[$F{dia_18}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="850" y="0" width="30" height="19" uuid="4a79a208-7ff4-4e61-9c58-74a8215ee6f6"/>
 				<textFieldExpression><![CDATA[$F{dia_19}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="880" y="0" width="30" height="19" uuid="ad385f57-92c4-42ad-ad5d-726c20039287"/>
 				<textFieldExpression><![CDATA[$F{dia_20}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="910" y="0" width="30" height="19" uuid="afc2002d-df62-47a7-91a8-366210895e34"/>
 				<textFieldExpression><![CDATA[$F{dia_21}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="940" y="0" width="30" height="19" uuid="238b0104-3f56-4f94-83e7-defc99eee435"/>
 				<textFieldExpression><![CDATA[$F{dia_22}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="970" y="0" width="30" height="19" uuid="c73062b9-5a92-430e-8eae-c67cf71c86c2"/>
 				<textFieldExpression><![CDATA[$F{dia_23}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="1000" y="0" width="30" height="19" uuid="82a1018a-ffc4-4fe8-8393-ebb8c5b8685a"/>
 				<textFieldExpression><![CDATA[$F{dia_24}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="1030" y="0" width="30" height="19" uuid="dbda60bf-cbdd-4c22-bee7-f20fd2518b30"/>
 				<textFieldExpression><![CDATA[$F{dia_25}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="1060" y="0" width="30" height="19" uuid="fc66dc7b-45b3-4048-89db-85e11b4cb966"/>
 				<textFieldExpression><![CDATA[$F{dia_26}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="1090" y="0" width="30" height="19" uuid="4c903627-25a0-415c-97a2-218ecb505e91"/>
 				<textFieldExpression><![CDATA[$F{dia_27}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="1120" y="0" width="30" height="19" uuid="d9b0a2c9-af51-4872-874a-18802a2758f1"/>
 				<textFieldExpression><![CDATA[$F{dia_28}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="1150" y="0" width="30" height="19" uuid="4e77ea3d-6c6b-4dce-8001-9ad3bce39295"/>
 				<textFieldExpression><![CDATA[$F{dia_29}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="1180" y="0" width="30" height="19" uuid="2c93d194-92f2-451c-9b33-c7ba8076f319"/>
 				<textFieldExpression><![CDATA[$F{dia_30}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="1210" y="0" width="30" height="19" uuid="283ddfde-499d-492d-ac6b-2e4f4b466e57"/>
 				<textFieldExpression><![CDATA[$F{dia_31}]]></textFieldExpression>
 			</textField>

@@ -43,7 +43,9 @@ class CargueVehiculoController {
                             placaCivil: tokens[1],
                             centroCostos: tokens[2],
                             equipo: tokens[3],
-                            cliente: Cliente.findByUnidadSigla(tokens[4]),
+                            puntoMedidaConsumo: tokens[4],
+                            puntoMedidaKm: tokens[5],
+                            cliente: Cliente.findByUnidadSigla(tokens[6]),
                             tasaFalla: TasaFalla.findBySigla(tokens[0].charAt(0)))
                     )
                 }
@@ -89,5 +91,13 @@ class CargueVehiculoController {
             }
             '*'{ render status: NOT_FOUND }
         }
+    }
+
+    def downloadArchivo(Long id){
+        def cargue = cargueVehiculoService.get(id)
+        response.contentType = "application/CSV"
+        response.setHeader("Content-Disposition","attachment;filename="+cargue.nombreArchivo)
+        response.outputStream << cargue.archivo
+        response.outputStream.flush()
     }
 }

@@ -60,8 +60,8 @@ class ReporteDetallado {
         eds nullable:false, blank: false
         placaMilitar nullable:false, blank: false
         fechaCorrida nullable:false, blank: false
-        puntoMedidaConsumo nullable:false, blank: false
-        puntoMedidaKm nullable:false, blank: false
+        puntoMedidaConsumo nullable:true, blank: false
+        puntoMedidaKm nullable:true, blank: false
         sigla nullable:false, blank: false
         tasa nullable:false, blank: false
         glBonos nullable:false, blank: false

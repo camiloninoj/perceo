@@ -2,8 +2,14 @@ package perceo
 
 import co.lodiser.perceo.Cliente
 import co.lodiser.perceo.TasaFalla
+import co.lodiser.perceo.Rol
+import co.lodiser.perceo.UsuarioRol
+import co.lodiser.perceo.Usuario
+import co.lodiser.perceo.Requestmap
 
 class BootStrap {
+
+    def springSecurityService
 
     def init = { servletContext ->
         new TasaFalla(sigla:'A',tipoVehiculo:'Ambulancia',tasa:25).save()
@@ -28,6 +34,32 @@ class BootStrap {
                 gestorFlotaSigla:'CP.',gestorFlotaNombre:'VALENZUELA PINZON OSCAR MAURICIO',
                 oficialS4Sigla:'CT.', oficialS4Nombre:'AMAYA TOLEDO LUIS GUILLERMO',
                 ejecutivoSigla:'MY.',ejecutivoNombre:'GARCIA SANCHEZ JOHN A.').save()
+
+        def adminRole = new Rol(authority: 'ROLE_ADMIN').save()
+
+        for (String url in [
+                '/', '/error', '/index', '/index.gsp', '/**/favicon.ico', '/shutdown',
+                '/assets/**', '/**/js/**', '/**/css/**', '/**/images/**',
+                '/login', '/login.*', '/login/*',
+                '/logout', '/logout.*', '/logout/*']) {
+            new Requestmap(url: url, configAttribute: 'permitAll').save()
+        }
+
+        new Requestmap(url: '/cliente/**',configAttribute: 'ROLE_ADMIN').save()
+        new Requestmap(url: '/tasaFalla/**',configAttribute: 'ROLE_ADMIN').save()
+        new Requestmap(url: '/cargueVehiculo/**',configAttribute: 'ROLE_ADMIN').save()
+        new Requestmap(url: '/vehiculo/**',configAttribute: 'ROLE_ADMIN').save()
+        new Requestmap(url: '/cargueConsumo/**',configAttribute: 'ROLE_ADMIN').save()
+        new Requestmap(url: '/consumo/**',configAttribute: 'ROLE_ADMIN').save()
+        new Requestmap(url: '/reporteDetallado/**',configAttribute: 'ROLE_ADMIN').save()
+        new Requestmap(url: '/anexoT/**',configAttribute: 'ROLE_ADMIN').save()
+        new Requestmap(url: '/jasper/**',configAttribute: 'ROLE_ADMIN').save()
+
+        springSecurityService.clearCachedRequestmaps()
+
+        def admin = new Usuario(username:'admin',password:'p3R(30').save()
+
+        UsuarioRol.create(admin, adminRole)
     }
 
     def destroy = {

@@ -7,16 +7,16 @@ class Consumo {
     Date fecha
     Vehiculo vehiculo
     String tipoCombustible
+    Double vlrUnit
     Double cantidad
     Double importeTT
     String numeroVenta
     String eds
-    Integer puntoMedidaConsumo
-    Integer puntoMedidaKm
     String codigoSap
+    CargueConsumo cargue
 
     static hasOne = [reporte:ReporteDetallado]
-    static belongsTo = [cargue: CargueConsumo]
+    static belongsTo = [vehiculo: Vehiculo]
 
     def afterInsert() {
         reporte = new ReporteDetallado()
@@ -26,17 +26,7 @@ class Consumo {
         reporte.tipoVehiculo = vehiculo.tasaFalla.tipoVehiculo
         reporte.tipoCombustible = tipoCombustible
         reporte.cantidad = cantidad
-        switch (tipoCombustible){
-            case "DIESEL":
-                reporte.vlrUnit =  cargue.precioGlDiesel
-            case "CORRIENTE":
-                reporte.vlrUnit =  cargue.precioGlCorriente
-            case "EXTRA":
-                reporte.vlrUnit =  cargue.precioGlExtra
-            default:
-                reporte.vlrUnit =  cargue.precioGlCorriente
-        }
-
+        reporte.vlrUnit = vlrUnit
         reporte.importeTT = importeTT
         reporte.numeroVenta = numeroVenta
         reporte.ano = new SimpleDateFormat('yyyy').format(fecha)
@@ -46,8 +36,8 @@ class Consumo {
         reporte.eds = eds
         reporte.placaMilitar = vehiculo.placaMilitar
         reporte.fechaCorrida = new SimpleDateFormat('ddMMyyyy').format(fecha)
-        reporte.puntoMedidaConsumo = puntoMedidaConsumo
-        reporte.puntoMedidaKm = puntoMedidaConsumo
+        reporte.puntoMedidaConsumo = vehiculo.puntoMedidaConsumo
+        reporte.puntoMedidaKm = vehiculo.puntoMedidaKm
         reporte.sigla = vehiculo.tasaFalla.sigla
         reporte.tasa = vehiculo.tasaFalla.tasa
         reporte.glBonos = cantidad
@@ -74,19 +64,19 @@ class Consumo {
 
     static constraints = {
         fecha nullable:false, max: new Date()
-        vehiculo nullable:false
         tipoCombustible  nullable:false, blank:false, inList: ["DIESEL","CORRIENTE","EXTRA"]
+        vlrUnit nullable:false, min:0D
         cantidad nullable:false, min: 0D
         importeTT nullale:false, min:0D
         numeroVenta nullable:false, blank: false
         eds nullable:false, blank: false
-        puntoMedidaConsumo nullable:false, min:0
-        puntoMedidaKm nullable:false, min:0
         codigoSap nullable:false, blank: false
+        cargue nullable:true
         reporte nullable: true
     }
 
     String toString(){
-        return vehiculo.placaCivil+"_"+fecha
+        if (vehiculo)
+            return vehiculo.placaCivil+"_"+fecha
     }
 }

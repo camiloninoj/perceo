@@ -143,3 +143,14 @@ environments:
                 testOnReturn: false
                 jdbcInterceptors: ConnectionState
                 defaultTransactionIsolation: 2 # TRANSACTION_READ_COMMITTED
+grails:
+    plugin:
+        springsecurity:
+            userLookup:
+                userDomainClassName : co.lodiser.perceo.Usuario
+                authorityJoinClassName : co.lodiser.perceo.UsuarioRol
+            authority:
+                className : co.lodiser.perceo.Rol
+            requestMap:
+                className : co.lodiser.perceo.Requestmap
+            securityConfigType : Requestmap
