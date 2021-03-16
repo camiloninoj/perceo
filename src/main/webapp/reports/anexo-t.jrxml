@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="anexo-t" pageWidth="1300" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="1260" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0e3c5604-b98f-4db3-ae47-dbf959438b83">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="anexo-t" pageWidth="1300" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="1260" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" isIgnorePagination="true" uuid="0e3c5604-b98f-4db3-ae47-dbf959438b83">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Perceo BD Adapter"/>
 	<parameter name="unidadSigla" class="java.lang.String"/>
@@ -61,7 +61,8 @@ group by brigada_nombre,
 	mes_nombre, 
 	tipo_combustible,
 	tipo_vehiculo,
-	placa_militar]]>
+	placa_militar
+order by tipo_combustible desc]]>
 	</queryString>
 	<field name="brigada_nombre" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="brigada_nombre"/>
@@ -123,556 +124,1814 @@ group by brigada_nombre,
 		<property name="com.jaspersoft.studio.field.tree.path" value="reporte_detallado"/>
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="dia_01" class="java.lang.String">
+	<field name="dia_01" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="dia_01"/>
 		<property name="com.jaspersoft.studio.field.label" value="dia_01"/>
 	</field>
-	<field name="dia_02" class="java.lang.String">
+	<field name="dia_02" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="dia_02"/>
 		<property name="com.jaspersoft.studio.field.label" value="dia_02"/>
 	</field>
-	<field name="dia_03" class="java.lang.String">
+	<field name="dia_03" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="dia_03"/>
 		<property name="com.jaspersoft.studio.field.label" value="dia_03"/>
 	</field>
-	<field name="dia_04" class="java.lang.String">
+	<field name="dia_04" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="dia_04"/>
 		<property name="com.jaspersoft.studio.field.label" value="dia_04"/>
 	</field>
-	<field name="dia_05" class="java.lang.String">
+	<field name="dia_05" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="dia_05"/>
 		<property name="com.jaspersoft.studio.field.label" value="dia_05"/>
 	</field>
-	<field name="dia_06" class="java.lang.String">
+	<field name="dia_06" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="dia_06"/>
 		<property name="com.jaspersoft.studio.field.label" value="dia_06"/>
 	</field>
-	<field name="dia_07" class="java.lang.String">
+	<field name="dia_07" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="dia_07"/>
 		<property name="com.jaspersoft.studio.field.label" value="dia_07"/>
 	</field>
-	<field name="dia_08" class="java.lang.String">
+	<field name="dia_08" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="dia_08"/>
 		<property name="com.jaspersoft.studio.field.label" value="dia_08"/>
 	</field>
-	<field name="dia_09" class="java.lang.String">
+	<field name="dia_09" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="dia_09"/>
 		<property name="com.jaspersoft.studio.field.label" value="dia_09"/>
 	</field>
-	<field name="dia_10" class="java.lang.String">
+	<field name="dia_10" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="dia_10"/>
 		<property name="com.jaspersoft.studio.field.label" value="dia_10"/>
 	</field>
-	<field name="dia_11" class="java.lang.String">
+	<field name="dia_11" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="dia_11"/>
 		<property name="com.jaspersoft.studio.field.label" value="dia_11"/>
 	</field>
-	<field name="dia_12" class="java.lang.String">
+	<field name="dia_12" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="dia_12"/>
 		<property name="com.jaspersoft.studio.field.label" value="dia_12"/>
 	</field>
-	<field name="dia_13" class="java.lang.String">
+	<field name="dia_13" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="dia_13"/>
 		<property name="com.jaspersoft.studio.field.label" value="dia_13"/>
 	</field>
-	<field name="dia_14" class="java.lang.String">
+	<field name="dia_14" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="dia_14"/>
 		<property name="com.jaspersoft.studio.field.label" value="dia_14"/>
 	</field>
-	<field name="dia_15" class="java.lang.String">
+	<field name="dia_15" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="dia_15"/>
 		<property name="com.jaspersoft.studio.field.label" value="dia_15"/>
 	</field>
-	<field name="dia_16" class="java.lang.String">
+	<field name="dia_16" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="dia_16"/>
 		<property name="com.jaspersoft.studio.field.label" value="dia_16"/>
 	</field>
-	<field name="dia_17" class="java.lang.String">
+	<field name="dia_17" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="dia_17"/>
 		<property name="com.jaspersoft.studio.field.label" value="dia_17"/>
 	</field>
-	<field name="dia_18" class="java.lang.String">
+	<field name="dia_18" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="dia_18"/>
 		<property name="com.jaspersoft.studio.field.label" value="dia_18"/>
 	</field>
-	<field name="dia_19" class="java.lang.String">
+	<field name="dia_19" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="dia_19"/>
 		<property name="com.jaspersoft.studio.field.label" value="dia_19"/>
 	</field>
-	<field name="dia_20" class="java.lang.String">
+	<field name="dia_20" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="dia_20"/>
 		<property name="com.jaspersoft.studio.field.label" value="dia_20"/>
 	</field>
-	<field name="dia_21" class="java.lang.String">
+	<field name="dia_21" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="dia_21"/>
 		<property name="com.jaspersoft.studio.field.label" value="dia_21"/>
 	</field>
-	<field name="dia_22" class="java.lang.String">
+	<field name="dia_22" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="dia_22"/>
 		<property name="com.jaspersoft.studio.field.label" value="dia_22"/>
 	</field>
-	<field name="dia_23" class="java.lang.String">
+	<field name="dia_23" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="dia_23"/>
 		<property name="com.jaspersoft.studio.field.label" value="dia_23"/>
 	</field>
-	<field name="dia_24" class="java.lang.String">
+	<field name="dia_24" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="dia_24"/>
 		<property name="com.jaspersoft.studio.field.label" value="dia_24"/>
 	</field>
-	<field name="dia_25" class="java.lang.String">
+	<field name="dia_25" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="dia_25"/>
 		<property name="com.jaspersoft.studio.field.label" value="dia_25"/>
 	</field>
-	<field name="dia_26" class="java.lang.String">
+	<field name="dia_26" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="dia_26"/>
 		<property name="com.jaspersoft.studio.field.label" value="dia_26"/>
 	</field>
-	<field name="dia_27" class="java.lang.String">
+	<field name="dia_27" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="dia_27"/>
 		<property name="com.jaspersoft.studio.field.label" value="dia_27"/>
 	</field>
-	<field name="dia_28" class="java.lang.String">
+	<field name="dia_28" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="dia_28"/>
 		<property name="com.jaspersoft.studio.field.label" value="dia_28"/>
 	</field>
-	<field name="dia_29" class="java.lang.String">
+	<field name="dia_29" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="dia_29"/>
 		<property name="com.jaspersoft.studio.field.label" value="dia_29"/>
 	</field>
-	<field name="dia_30" class="java.lang.String">
+	<field name="dia_30" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="dia_30"/>
 		<property name="com.jaspersoft.studio.field.label" value="dia_30"/>
 	</field>
-	<field name="dia_31" class="java.lang.String">
+	<field name="dia_31" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="dia_31"/>
 		<property name="com.jaspersoft.studio.field.label" value="dia_31"/>
 	</field>
+	<variable name="tipo_combustible_sum_01" class="java.lang.Integer" resetType="Group" resetGroup="tipo_combustible" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_01}]]></variableExpression>
+	</variable>
+	<variable name="tipo_combustible_sum_02" class="java.lang.Integer" resetType="Group" resetGroup="tipo_combustible" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_02}]]></variableExpression>
+	</variable>
+	<variable name="tipo_combustible_sum_03" class="java.lang.Integer" resetType="Group" resetGroup="tipo_combustible" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_03}]]></variableExpression>
+	</variable>
+	<variable name="tipo_combustible_sum_04" class="java.lang.Integer" resetType="Group" resetGroup="tipo_combustible" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_04}]]></variableExpression>
+	</variable>
+	<variable name="tipo_combustible_sum_05" class="java.lang.Integer" resetType="Group" resetGroup="tipo_combustible" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_05}]]></variableExpression>
+	</variable>
+	<variable name="tipo_combustible_sum_06" class="java.lang.Integer" resetType="Group" resetGroup="tipo_combustible" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_06}]]></variableExpression>
+	</variable>
+	<variable name="tipo_combustible_sum_07" class="java.lang.Integer" resetType="Group" resetGroup="tipo_combustible" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_07}]]></variableExpression>
+	</variable>
+	<variable name="tipo_combustible_sum_08" class="java.lang.Integer" resetType="Group" resetGroup="tipo_combustible" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_08}]]></variableExpression>
+	</variable>
+	<variable name="tipo_combustible_sum_09" class="java.lang.Integer" resetType="Group" resetGroup="tipo_combustible" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_09}]]></variableExpression>
+	</variable>
+	<variable name="tipo_combustible_sum_10" class="java.lang.Integer" resetType="Group" resetGroup="tipo_combustible" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_10}]]></variableExpression>
+	</variable>
+	<variable name="tipo_combustible_sum_11" class="java.lang.Integer" resetType="Group" resetGroup="tipo_combustible" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_11}]]></variableExpression>
+	</variable>
+	<variable name="tipo_combustible_sum_12" class="java.lang.Integer" resetType="Group" resetGroup="tipo_combustible" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_12}]]></variableExpression>
+	</variable>
+	<variable name="tipo_combustible_sum_13" class="java.lang.Integer" resetType="Group" resetGroup="tipo_combustible" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_13}]]></variableExpression>
+	</variable>
+	<variable name="tipo_combustible_sum_14" class="java.lang.Integer" resetType="Group" resetGroup="tipo_combustible" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_14}]]></variableExpression>
+	</variable>
+	<variable name="tipo_combustible_sum_15" class="java.lang.Integer" resetType="Group" resetGroup="tipo_combustible" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_15}]]></variableExpression>
+	</variable>
+	<variable name="tipo_combustible_sum_16" class="java.lang.Integer" resetType="Group" resetGroup="tipo_combustible" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_16}]]></variableExpression>
+	</variable>
+	<variable name="tipo_combustible_sum_17" class="java.lang.Integer" resetType="Group" resetGroup="tipo_combustible" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_17}]]></variableExpression>
+	</variable>
+	<variable name="tipo_combustible_sum_18" class="java.lang.Integer" resetType="Group" resetGroup="tipo_combustible" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_18}]]></variableExpression>
+	</variable>
+	<variable name="tipo_combustible_sum_19" class="java.lang.Integer" resetType="Group" resetGroup="tipo_combustible" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_19}]]></variableExpression>
+	</variable>
+	<variable name="tipo_combustible_sum_20" class="java.lang.Integer" resetType="Group" resetGroup="tipo_combustible" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_20}]]></variableExpression>
+	</variable>
+	<variable name="tipo_combustible_sum_21" class="java.lang.Integer" resetType="Group" resetGroup="tipo_combustible" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_21}]]></variableExpression>
+	</variable>
+	<variable name="tipo_combustible_sum_22" class="java.lang.Integer" resetType="Group" resetGroup="tipo_combustible" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_22}]]></variableExpression>
+	</variable>
+	<variable name="tipo_combustible_sum_23" class="java.lang.Integer" resetType="Group" resetGroup="tipo_combustible" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_23}]]></variableExpression>
+	</variable>
+	<variable name="tipo_combustible_sum_24" class="java.lang.Integer" resetType="Group" resetGroup="tipo_combustible" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_24}]]></variableExpression>
+	</variable>
+	<variable name="tipo_combustible_sum_25" class="java.lang.Integer" resetType="Group" resetGroup="tipo_combustible" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_25}]]></variableExpression>
+	</variable>
+	<variable name="tipo_combustible_sum_26" class="java.lang.Integer" resetType="Group" resetGroup="tipo_combustible" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_26}]]></variableExpression>
+	</variable>
+	<variable name="tipo_combustible_sum_27" class="java.lang.Integer" resetType="Group" resetGroup="tipo_combustible" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_27}]]></variableExpression>
+	</variable>
+	<variable name="tipo_combustible_sum_28" class="java.lang.Integer" resetType="Group" resetGroup="tipo_combustible" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_28}]]></variableExpression>
+	</variable>
+	<variable name="tipo_combustible_sum_29" class="java.lang.Integer" resetType="Group" resetGroup="tipo_combustible" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_29}]]></variableExpression>
+	</variable>
+	<variable name="tipo_combustible_sum_30" class="java.lang.Integer" resetType="Group" resetGroup="tipo_combustible" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_30}]]></variableExpression>
+	</variable>
+	<variable name="tipo_combustible_sum_31" class="java.lang.Integer" resetType="Group" resetGroup="tipo_combustible" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_31}]]></variableExpression>
+	</variable>
+	<variable name="total_sum_01" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_01}]]></variableExpression>
+	</variable>
+	<variable name="total_sum_02" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_02}]]></variableExpression>
+	</variable>
+	<variable name="total_sum_03" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_03}]]></variableExpression>
+	</variable>
+	<variable name="total_sum_04" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_04}]]></variableExpression>
+	</variable>
+	<variable name="total_sum_05" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_05}]]></variableExpression>
+	</variable>
+	<variable name="total_sum_06" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_06}]]></variableExpression>
+	</variable>
+	<variable name="total_sum_07" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_07}]]></variableExpression>
+	</variable>
+	<variable name="total_sum_08" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_08}]]></variableExpression>
+	</variable>
+	<variable name="total_sum_09" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_09}]]></variableExpression>
+	</variable>
+	<variable name="total_sum_10" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_10}]]></variableExpression>
+	</variable>
+	<variable name="total_sum_11" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_11}]]></variableExpression>
+	</variable>
+	<variable name="total_sum_12" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_12}]]></variableExpression>
+	</variable>
+	<variable name="total_sum_13" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_13}]]></variableExpression>
+	</variable>
+	<variable name="total_sum_14" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_14}]]></variableExpression>
+	</variable>
+	<variable name="total_sum_15" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_15}]]></variableExpression>
+	</variable>
+	<variable name="total_sum_16" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_16}]]></variableExpression>
+	</variable>
+	<variable name="total_sum_17" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_17}]]></variableExpression>
+	</variable>
+	<variable name="total_sum_18" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_18}]]></variableExpression>
+	</variable>
+	<variable name="total_sum_19" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_19}]]></variableExpression>
+	</variable>
+	<variable name="total_sum_20" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_20}]]></variableExpression>
+	</variable>
+	<variable name="total_sum_21" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_21}]]></variableExpression>
+	</variable>
+	<variable name="total_sum_22" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_22}]]></variableExpression>
+	</variable>
+	<variable name="total_sum_23" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_23}]]></variableExpression>
+	</variable>
+	<variable name="total_sum_24" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_24}]]></variableExpression>
+	</variable>
+	<variable name="total_sum_25" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_25}]]></variableExpression>
+	</variable>
+	<variable name="total_sum_26" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_26}]]></variableExpression>
+	</variable>
+	<variable name="total_sum_27" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_27}]]></variableExpression>
+	</variable>
+	<variable name="total_sum_28" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_28}]]></variableExpression>
+	</variable>
+	<variable name="total_sum_29" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_29}]]></variableExpression>
+	</variable>
+	<variable name="total_sum_30" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_30}]]></variableExpression>
+	</variable>
+	<variable name="total_sum_31" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{dia_31}]]></variableExpression>
+	</variable>
+	<group name="tipo_combustible" minHeightToStartNewPage="20">
+		<groupExpression><![CDATA[$F{tipo_combustible}]]></groupExpression>
+		<groupFooter>
+			<band height="20">
+				<textField>
+					<reportElement x="10" y="0" width="300" height="20" printWhenGroupChanges="tipo_combustible" uuid="9d506bc6-4ed0-40dd-ac25-3a660a4d3d85">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineColor="#C1C5E8"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement>
+						<font fontName="Verdana" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Total "+$F{tipo_combustible}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="310" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="6553c351-f68a-4705-9f7e-479c40b4126d">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineColor="#C1C5E8"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement>
+						<font fontName="Verdana" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{tipo_combustible_sum_01}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="340" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="65aa7be6-dfcb-4ba3-bd04-92047f8601d0">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineColor="#C1C5E8"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement>
+						<font fontName="Verdana" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{tipo_combustible_sum_02}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="370" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="396de0f5-d6e0-41cb-80e3-c3a869b0afa1">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineColor="#C1C5E8"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement>
+						<font fontName="Verdana" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{tipo_combustible_sum_03}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="400" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="3100e7c9-039e-489f-8896-9aa87c89d557">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineColor="#C1C5E8"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement>
+						<font fontName="Verdana" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{tipo_combustible_sum_04}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="430" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="9f8d555b-a47a-4921-941d-fd116ed80bdc">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineColor="#C1C5E8"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement>
+						<font fontName="Verdana" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{tipo_combustible_sum_05}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="460" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="b3840905-70bd-450e-99d1-50608b4fc200">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineColor="#C1C5E8"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement>
+						<font fontName="Verdana" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{tipo_combustible_sum_06}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="490" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="d1678c87-c773-4323-afc8-151edcdf57e8">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineColor="#C1C5E8"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement>
+						<font fontName="Verdana" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{tipo_combustible_sum_07}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="520" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="bde6f7ea-e828-48d8-947f-1a39e9390bc8">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineColor="#C1C5E8"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement>
+						<font fontName="Verdana" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{tipo_combustible_sum_08}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="550" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="31117a53-d69c-4ebe-b39b-b1624cf1d992">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineColor="#C1C5E8"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement>
+						<font fontName="Verdana" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{tipo_combustible_sum_09}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="580" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="d8834099-a5f5-4d08-b051-d4466db7ad40">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineColor="#C1C5E8"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement>
+						<font fontName="Verdana" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{tipo_combustible_sum_10}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="610" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="a7a76c09-32a0-4e4f-9d36-1f5ed9e0a715">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineColor="#C1C5E8"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement>
+						<font fontName="Verdana" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{tipo_combustible_sum_11}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="640" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="8dd1c007-70a9-4e2e-a9cf-78e833b4226e">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineColor="#C1C5E8"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement>
+						<font fontName="Verdana" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{tipo_combustible_sum_12}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="670" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="9ccded02-c676-44e5-a6a1-8132622e5418">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineColor="#C1C5E8"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement>
+						<font fontName="Verdana" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{tipo_combustible_sum_13}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="700" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="ce27f187-05bd-4db6-b5c3-437f4337cb75">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineColor="#C1C5E8"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement>
+						<font fontName="Verdana" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{tipo_combustible_sum_14}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="730" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="81a1d852-990d-4573-a449-8655e632147b">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineColor="#C1C5E8"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement>
+						<font fontName="Verdana" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{tipo_combustible_sum_15}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="760" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="19a55f1c-5aef-410d-96b9-9cb5423e0501">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineColor="#C1C5E8"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement>
+						<font fontName="Verdana" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{tipo_combustible_sum_16}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="790" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="96722a7a-0464-45ba-9d37-05e848a234da">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineColor="#C1C5E8"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement>
+						<font fontName="Verdana" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{tipo_combustible_sum_17}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="820" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="6bb0a424-a3d7-4036-87df-90339c77f06c">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineColor="#C1C5E8"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement>
+						<font fontName="Verdana" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{tipo_combustible_sum_18}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="850" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="1066df0c-4c1a-4252-b797-658ee22702bc">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineColor="#C1C5E8"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement>
+						<font fontName="Verdana" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{tipo_combustible_sum_19}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="880" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="b68fa921-d381-4389-b360-d75650795f03">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineColor="#C1C5E8"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement>
+						<font fontName="Verdana" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{tipo_combustible_sum_20}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="910" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="1737062d-0918-476e-9694-206cd027785d">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineColor="#C1C5E8"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement>
+						<font fontName="Verdana" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{tipo_combustible_sum_21}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="940" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="7fc81d62-c59d-44f5-84d2-7bff73df08a9">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineColor="#C1C5E8"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement>
+						<font fontName="Verdana" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{tipo_combustible_sum_22}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="970" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="1f380524-c06e-49d2-8269-ad5e9c2a49b3">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineColor="#C1C5E8"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement>
+						<font fontName="Verdana" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{tipo_combustible_sum_23}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="1000" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="12adaa48-7c35-47c1-8626-1691f6c90f0c">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineColor="#C1C5E8"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement>
+						<font fontName="Verdana" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{tipo_combustible_sum_24}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="1030" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="807a5b9f-c99c-47d0-b5e6-64676461eb8a">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineColor="#C1C5E8"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement>
+						<font fontName="Verdana" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{tipo_combustible_sum_25}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="1060" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="0dedd93e-7d69-4d98-9b16-8119ed7c191c">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineColor="#C1C5E8"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement>
+						<font fontName="Verdana" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{tipo_combustible_sum_26}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="1090" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="af1b4f42-e03e-41ed-bafd-fc053e939f51">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineColor="#C1C5E8"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement>
+						<font fontName="Verdana" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{tipo_combustible_sum_27}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="1120" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="93ac7b19-e419-4827-9350-4671196c97bc">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineColor="#C1C5E8"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement>
+						<font fontName="Verdana" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{tipo_combustible_sum_28}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="1150" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="59c5b2dd-bfe4-4ed4-aa82-cd8d227cea83">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineColor="#C1C5E8"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement>
+						<font fontName="Verdana" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{tipo_combustible_sum_29}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="1180" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="b45a50a2-3359-4e20-9a78-86a1add31cfe">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineColor="#C1C5E8"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement>
+						<font fontName="Verdana" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{tipo_combustible_sum_30}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="1210" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="b2d42bf5-ba89-4025-89d1-1f0fff96542d">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineColor="#C1C5E8"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement>
+						<font fontName="Verdana" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{tipo_combustible_sum_31}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="30" splitType="Stretch">
+		<band height="169" splitType="Stretch">
 			<staticText>
 				<reportElement x="510" y="0" width="190" height="30" uuid="5ced1303-c132-4eaf-8097-88e0278d1616"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="22"/>
+					<font fontName="Verdana" size="22"/>
 				</textElement>
 				<text><![CDATA[ANEXO T]]></text>
 			</staticText>
-		</band>
-	</title>
-	<pageHeader>
-		<band height="150" splitType="Stretch">
 			<staticText>
-				<reportElement x="160" y="0" width="100" height="20" forecolor="#FA0E0A" uuid="9ca5a58b-289f-4dbf-9836-f98a3ff23312"/>
-				<textElement verticalAlignment="Middle"/>
+				<reportElement x="160" y="29" width="100" height="20" forecolor="#FA0E0A" uuid="9ca5a58b-289f-4dbf-9836-f98a3ff23312"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
 				<text><![CDATA[RESTRINGIDO]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="160" y="20" width="190" height="20" forecolor="#000000" uuid="b53315d3-93cc-4f48-a3a8-a9501688b89f"/>
-				<textElement verticalAlignment="Middle"/>
+				<reportElement x="160" y="49" width="280" height="20" forecolor="#000000" uuid="b53315d3-93cc-4f48-a3a8-a9501688b89f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
 				<text><![CDATA[FUERZAS MILITARES DE COLOMBIA]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="160" y="40" width="190" height="20" forecolor="#000000" uuid="60586256-9df2-4a82-8c4d-ba58e3ccac4e"/>
-				<textElement verticalAlignment="Middle"/>
+				<reportElement x="160" y="69" width="280" height="20" forecolor="#000000" uuid="60586256-9df2-4a82-8c4d-ba58e3ccac4e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
 				<text><![CDATA[EJÉRCITO NACIONAL]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="160" y="60" width="190" height="20" uuid="6f1a9640-cac4-45d0-9345-352aaaa465ab">
+				<reportElement x="160" y="89" width="280" height="20" uuid="6f1a9640-cac4-45d0-9345-352aaaa465ab">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
-				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{brigada_nombre}]]></textFieldExpression>
 			</textField>
 			<image>
-				<reportElement x="50" y="0" width="110" height="130" uuid="6bf36ff6-9472-45b7-bd98-d829db90267e"/>
+				<reportElement x="50" y="29" width="110" height="130" uuid="6bf36ff6-9472-45b7-bd98-d829db90267e"/>
 				<imageExpression><![CDATA["../../reports/escudo.png"]]></imageExpression>
 			</image>
 			<textField>
-				<reportElement x="160" y="80" width="190" height="20" uuid="4dcc261a-c3a2-42d6-ac65-0bb1b9102fc7">
+				<reportElement x="160" y="109" width="280" height="20" uuid="4dcc261a-c3a2-42d6-ac65-0bb1b9102fc7">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
-				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{unidad_nombre}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="160" y="100" width="190" height="20" forecolor="#000000" uuid="3adac415-255a-468e-a812-2c7ca3e3dd15"/>
-				<textElement verticalAlignment="Middle"/>
+				<reportElement x="160" y="129" width="280" height="20" forecolor="#000000" uuid="3adac415-255a-468e-a812-2c7ca3e3dd15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
 				<text><![CDATA[ANEXTO "T"]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="160" y="120" width="400" height="20" uuid="b77a0cf5-ae8d-4394-9ddd-d788b600cb60">
+				<reportElement x="160" y="149" width="440" height="20" uuid="b77a0cf5-ae8d-4394-9ddd-d788b600cb60">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
-				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
 				<textFieldExpression><![CDATA["CONSUMO DE  COMBUSTIBLE ENTREGADO MES DE "+$F{mes_nombre}+" DE "+$F{ano}]]></textFieldExpression>
 			</textField>
 		</band>
-	</pageHeader>
+	</title>
 	<columnHeader>
 		<band height="62" splitType="Stretch">
 			<staticText>
 				<reportElement mode="Opaque" x="10" y="40" width="100" height="22" backcolor="#C1C5E8" uuid="bdfa0334-a632-4102-98dc-55dfb5b3f1c7"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<text><![CDATA[TIPO COMBUSTIBLE]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="110" y="40" width="100" height="22" backcolor="#C1C5E8" uuid="59dcbfb7-0e05-496a-a676-68a75f46361b"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<text><![CDATA[TIPO VEHICULO]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="210" y="40" width="100" height="22" backcolor="#C1C5E8" uuid="16d90118-3831-4724-b003-127cf8bdcd99"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<text><![CDATA[PLACA MILITAR]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="310" y="18" width="930" height="22" backcolor="#C1C5E8" uuid="cdbfdf54-daaa-4f2f-bdb0-2da149ae3eaf"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<text><![CDATA[DIA MES]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="310" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="8dab653b-8f08-4d2f-a1ee-2d4a76d27011"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<text><![CDATA[01]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="340" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="fdc51a96-21ba-44b1-8a7a-28e938b59a78"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<text><![CDATA[02]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="400" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="2aaa6a91-a4f5-481a-b378-ba2c2ad09a8a"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<text><![CDATA[04]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="370" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="06682e96-f94c-42b0-aa31-4f76817e5291"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<text><![CDATA[03]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="430" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="4e824e34-dd18-45ec-a888-bf61d8c087ab"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<text><![CDATA[05]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="460" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="2e3aab1b-9fc5-4555-8f8d-1f2931aa1bc4"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<text><![CDATA[06]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="490" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="b74edc17-1c4d-41bd-bf58-c49918628901"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<text><![CDATA[07]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="520" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="4adfe827-1b06-4fd5-bc78-c332ebced166"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<text><![CDATA[08]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="580" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="819252ec-5e87-460a-9f2b-4ace9d0173f1"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<text><![CDATA[10]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="550" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="5cc4f470-e23c-465e-a96d-ce4e74e3c164"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<text><![CDATA[09]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="820" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="d78fb2a8-c7ad-49ec-9de7-d391910c300e"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<text><![CDATA[18]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="670" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="e60d7165-134b-4202-86cc-c840e89aacb8"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<text><![CDATA[13]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="850" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="97b92759-f796-4c1c-bda3-33dde2060905"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<text><![CDATA[19]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="880" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="b5a572d0-958a-47d5-8bc1-9490f5873580"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<text><![CDATA[20]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="610" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="c8f5a2e5-9bbb-40c3-b24b-d87ec5add4d0"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<text><![CDATA[11]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="790" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="714d672e-efd0-48da-8106-1fb626bb5e9a"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<text><![CDATA[17]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="640" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="2548939b-d2eb-4f3c-a806-b739450be644"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<text><![CDATA[12]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="760" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="4efb156b-9c10-4b83-bae7-dd9c37ed165d"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<text><![CDATA[16]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="700" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="f0da39f2-45db-4ba2-ba23-0bab1b4b2fd4"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<text><![CDATA[14]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="730" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="5b53ac00-27d4-46a0-8746-78f149f3f3dc"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<text><![CDATA[15]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="1120" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="b518640a-6405-4673-8eb2-39387eb3766b"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<text><![CDATA[28]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="970" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="1d60faef-d750-45d8-a4b8-697b39b12155"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<text><![CDATA[23]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="1150" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="a2b9efa2-e2c0-435f-8078-95e14715ada3"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<text><![CDATA[29]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="1180" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="8436bfae-78b4-4edd-8e9c-edca8e3d57cd"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<text><![CDATA[30]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="910" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="a0cbfa45-5d27-46a6-abb4-f48d5a0b4a4d"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<text><![CDATA[21]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="1090" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="a2135daa-73f9-4ca2-a79a-5f1accbbc48b"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<text><![CDATA[27]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="940" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="96e9a30c-9862-42ba-b733-d0a9d6c045ed"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<text><![CDATA[22]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="1060" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="d8f5e873-abab-4603-9009-0dc6570869c1"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<text><![CDATA[26]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="1000" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="25655b7b-6ca6-4a49-9ca3-daeaa64e1414"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<text><![CDATA[24]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="1030" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="9bd60149-9316-4a50-97a8-49e4d768594a"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<text><![CDATA[25]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="1210" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="8e12fb65-e62e-4dc7-b896-78c5f324d896"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<text><![CDATA[31]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="19" splitType="Stretch">
+		<band height="20" splitType="Stretch">
 			<textField>
-				<reportElement x="210" y="0" width="100" height="19" uuid="d7416e25-3ff2-473c-8f58-5fe5b5b49329"/>
+				<reportElement x="210" y="0" width="100" height="20" printWhenGroupChanges="tipo_combustible" uuid="d7416e25-3ff2-473c-8f58-5fe5b5b49329">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{placa_militar}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="10" y="0" width="100" height="19" uuid="5f2e42b7-520f-49f3-90d5-f12ec177e5a2"/>
-				<textFieldExpression><![CDATA[$F{tipo_combustible}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="110" y="0" width="100" height="19" uuid="173a8acd-de6a-4928-8b0c-c6c6efa7258c"/>
+				<reportElement x="110" y="0" width="100" height="20" printWhenGroupChanges="tipo_combustible" uuid="173a8acd-de6a-4928-8b0c-c6c6efa7258c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{tipo_vehiculo}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="310" y="0" width="30" height="19" uuid="bf588b24-b7fa-4901-847f-f9980543b24e"/>
+				<reportElement x="310" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="bf588b24-b7fa-4901-847f-f9980543b24e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{dia_01}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="340" y="0" width="30" height="19" uuid="6139ff56-d95d-474d-935b-6cab346b5828"/>
+				<reportElement x="340" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="6139ff56-d95d-474d-935b-6cab346b5828">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{dia_02}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="370" y="0" width="30" height="19" uuid="a30beda7-2e8a-4d45-99fb-7696929adaa8"/>
+				<reportElement x="370" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="a30beda7-2e8a-4d45-99fb-7696929adaa8"/>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{dia_03}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="400" y="0" width="30" height="19" uuid="663babb3-78e6-4159-8833-c9f1a1de3935"/>
+				<reportElement x="400" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="663babb3-78e6-4159-8833-c9f1a1de3935"/>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{dia_04}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="430" y="0" width="30" height="19" uuid="663577a4-f9a3-44d8-9a8e-5d228e82ee96"/>
+				<reportElement x="430" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="663577a4-f9a3-44d8-9a8e-5d228e82ee96">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{dia_05}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="460" y="0" width="30" height="19" uuid="d8b2338a-7970-4b03-a39e-916118ed42ef"/>
+				<reportElement x="460" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="d8b2338a-7970-4b03-a39e-916118ed42ef">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{dia_06}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="490" y="0" width="30" height="19" uuid="a4073355-1b0c-4421-a560-723d0429bb85"/>
+				<reportElement x="490" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="a4073355-1b0c-4421-a560-723d0429bb85">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{dia_07}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="520" y="0" width="30" height="19" uuid="3637857f-fcc4-409c-bdae-3540bfc2fa80"/>
+				<reportElement x="520" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="3637857f-fcc4-409c-bdae-3540bfc2fa80">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{dia_08}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="550" y="0" width="30" height="19" uuid="d828ac9b-dc54-481b-a76e-034e9122ece6"/>
+				<reportElement x="550" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="d828ac9b-dc54-481b-a76e-034e9122ece6">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{dia_09}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="580" y="0" width="30" height="19" uuid="6e5861ad-e5e2-4a9a-a46b-99909f0c7d5e"/>
+				<reportElement x="580" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="6e5861ad-e5e2-4a9a-a46b-99909f0c7d5e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{dia_10}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="610" y="0" width="30" height="19" uuid="68acee33-6954-4bb3-8758-84ae71aae426"/>
+				<reportElement x="610" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="68acee33-6954-4bb3-8758-84ae71aae426">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{dia_11}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="640" y="0" width="30" height="19" uuid="4360fd84-ebfa-49b2-9f2e-48be39c7873b"/>
+				<reportElement x="640" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="4360fd84-ebfa-49b2-9f2e-48be39c7873b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{dia_12}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="670" y="0" width="30" height="19" uuid="796e7c3d-debe-4804-9080-8636397b1452"/>
+				<reportElement x="670" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="796e7c3d-debe-4804-9080-8636397b1452">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{dia_13}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="700" y="0" width="30" height="19" uuid="70e6a8fb-ba61-4a03-9dd1-b694802abe30"/>
+				<reportElement x="700" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="70e6a8fb-ba61-4a03-9dd1-b694802abe30">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{dia_14}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="730" y="0" width="30" height="19" uuid="6824d4f0-9855-49fc-a7ec-fc762e860421"/>
+				<reportElement x="730" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="6824d4f0-9855-49fc-a7ec-fc762e860421">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{dia_15}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="760" y="0" width="30" height="19" uuid="8c0daa4d-0ca0-44f4-b88f-6a3fe919d71c"/>
+				<reportElement x="760" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="8c0daa4d-0ca0-44f4-b88f-6a3fe919d71c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{dia_16}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="790" y="0" width="30" height="19" uuid="a02eeb13-36f7-4ca5-8c98-09f60283a243"/>
+				<reportElement x="790" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="a02eeb13-36f7-4ca5-8c98-09f60283a243">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{dia_17}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="820" y="0" width="30" height="19" uuid="28c887c0-1699-4b6e-96d5-c0587616f1e4"/>
+				<reportElement x="820" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="28c887c0-1699-4b6e-96d5-c0587616f1e4">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{dia_18}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="850" y="0" width="30" height="19" uuid="4a79a208-7ff4-4e61-9c58-74a8215ee6f6"/>
+				<reportElement x="850" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="4a79a208-7ff4-4e61-9c58-74a8215ee6f6">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{dia_19}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="880" y="0" width="30" height="19" uuid="ad385f57-92c4-42ad-ad5d-726c20039287"/>
+				<reportElement x="880" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="ad385f57-92c4-42ad-ad5d-726c20039287">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{dia_20}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="910" y="0" width="30" height="19" uuid="afc2002d-df62-47a7-91a8-366210895e34"/>
+				<reportElement x="910" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="afc2002d-df62-47a7-91a8-366210895e34">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{dia_21}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="940" y="0" width="30" height="19" uuid="238b0104-3f56-4f94-83e7-defc99eee435"/>
+				<reportElement x="940" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="238b0104-3f56-4f94-83e7-defc99eee435">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{dia_22}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="970" y="0" width="30" height="19" uuid="c73062b9-5a92-430e-8eae-c67cf71c86c2"/>
+				<reportElement x="970" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="c73062b9-5a92-430e-8eae-c67cf71c86c2">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{dia_23}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="1000" y="0" width="30" height="19" uuid="82a1018a-ffc4-4fe8-8393-ebb8c5b8685a"/>
+				<reportElement x="1000" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="82a1018a-ffc4-4fe8-8393-ebb8c5b8685a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{dia_24}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="1030" y="0" width="30" height="19" uuid="dbda60bf-cbdd-4c22-bee7-f20fd2518b30"/>
+				<reportElement x="1030" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="dbda60bf-cbdd-4c22-bee7-f20fd2518b30">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{dia_25}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="1060" y="0" width="30" height="19" uuid="fc66dc7b-45b3-4048-89db-85e11b4cb966"/>
+				<reportElement x="1060" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="fc66dc7b-45b3-4048-89db-85e11b4cb966">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{dia_26}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="1090" y="0" width="30" height="19" uuid="4c903627-25a0-415c-97a2-218ecb505e91"/>
+				<reportElement x="1090" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="4c903627-25a0-415c-97a2-218ecb505e91">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{dia_27}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="1120" y="0" width="30" height="19" uuid="d9b0a2c9-af51-4872-874a-18802a2758f1"/>
+				<reportElement x="1120" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="d9b0a2c9-af51-4872-874a-18802a2758f1">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{dia_28}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="1150" y="0" width="30" height="19" uuid="4e77ea3d-6c6b-4dce-8001-9ad3bce39295"/>
+				<reportElement x="1150" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="4e77ea3d-6c6b-4dce-8001-9ad3bce39295">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{dia_29}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="1180" y="0" width="30" height="19" uuid="2c93d194-92f2-451c-9b33-c7ba8076f319"/>
+				<reportElement x="1180" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="2c93d194-92f2-451c-9b33-c7ba8076f319">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{dia_30}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="1210" y="0" width="30" height="19" uuid="283ddfde-499d-492d-ac6b-2e4f4b466e57"/>
+				<reportElement x="1210" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="283ddfde-499d-492d-ac6b-2e4f4b466e57">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{dia_31}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="0" width="100" height="20" printWhenGroupChanges="tipo_combustible" uuid="5f2e42b7-520f-49f3-90d5-f12ec177e5a2"/>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tipo_combustible}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
-	<lastPageFooter>
-		<band height="79">
+	<columnFooter>
+		<band height="200" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<staticText>
-				<reportElement x="110" y="49" width="100" height="20" uuid="c3325fa8-41b1-4a2d-a7af-69395b036298"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<reportElement x="105" y="180" width="100" height="20" uuid="c3325fa8-41b1-4a2d-a7af-69395b036298"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<text><![CDATA[GESTOR DE FLOTA]]></text>
 			</staticText>
 			<line direction="BottomUp">
-				<reportElement x="60" y="49" width="190" height="1" uuid="c3c1d58d-26f9-4387-bff5-2dd1f6e1fe1a"/>
+				<reportElement x="61" y="178" width="190" height="1" uuid="c3c1d58d-26f9-4387-bff5-2dd1f6e1fe1a"/>
 			</line>
 			<textField>
-				<reportElement x="60" y="30" width="190" height="20" uuid="81b663dc-0419-4047-b8eb-8556db87cd1c"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<reportElement x="60" y="156" width="190" height="20" uuid="81b663dc-0419-4047-b8eb-8556db87cd1c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{gestor_flota}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="440" y="49" width="100" height="20" uuid="0914fb6f-3aa5-4005-bb22-d159b70749c8"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<reportElement x="440" y="180" width="100" height="20" uuid="0914fb6f-3aa5-4005-bb22-d159b70749c8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<text><![CDATA[OFICIAL S-4]]></text>
 			</staticText>
 			<line direction="BottomUp">
-				<reportElement x="390" y="49" width="190" height="1" uuid="8bee18e8-e56c-460e-8137-2ca9961c4e58"/>
+				<reportElement x="390" y="178" width="190" height="1" uuid="8bee18e8-e56c-460e-8137-2ca9961c4e58"/>
 			</line>
 			<textField>
-				<reportElement x="390" y="30" width="190" height="20" uuid="1b97c36c-adb4-442a-8a2d-2cba681c8694"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<reportElement x="390" y="157" width="190" height="20" uuid="1b97c36c-adb4-442a-8a2d-2cba681c8694"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{oficials4}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="675" y="49" width="200" height="20" uuid="873b4199-0adf-49c5-977e-09f34f2ef5d5"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<reportElement x="675" y="180" width="200" height="20" uuid="873b4199-0adf-49c5-977e-09f34f2ef5d5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<text><![CDATA[EJECUTIVO Y SEGUNDO COMANDANTE]]></text>
 			</staticText>
 			<line direction="BottomUp">
-				<reportElement x="680" y="49" width="190" height="1" uuid="f45dc280-16be-4f82-b8f9-127ab7806f89"/>
+				<reportElement x="683" y="178" width="190" height="1" uuid="f45dc280-16be-4f82-b8f9-127ab7806f89"/>
 			</line>
 			<textField>
-				<reportElement x="680" y="30" width="190" height="20" uuid="f69e28d7-d81c-4762-b34f-8f3890e5f58c"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<reportElement x="680" y="157" width="190" height="20" uuid="f69e28d7-d81c-4762-b34f-8f3890e5f58c">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{ejecutivo}]]></textFieldExpression>
 			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="10" y="0" width="300" height="19" backcolor="#C1C5E8" uuid="1f795b07-5f7f-43ef-a023-671f7717793a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="310" y="0" width="30" height="19" printWhenGroupChanges="tipo_combustible" backcolor="#C1C5E8" uuid="27e7701f-35f7-475c-b45b-63f8d5402018">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total_sum_01}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="340" y="0" width="30" height="19" printWhenGroupChanges="tipo_combustible" backcolor="#C1C5E8" uuid="35dbafea-5285-4269-9928-d51a3d71ca5d">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total_sum_02}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="370" y="0" width="30" height="19" printWhenGroupChanges="tipo_combustible" backcolor="#C1C5E8" uuid="70c7427a-0d22-4472-9917-e8bf2daf3a20">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total_sum_03}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="400" y="0" width="30" height="19" printWhenGroupChanges="tipo_combustible" backcolor="#C1C5E8" uuid="813508c1-ea82-415d-86b5-4b8a789a2b24">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total_sum_04}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="430" y="0" width="30" height="19" printWhenGroupChanges="tipo_combustible" backcolor="#C1C5E8" uuid="208d3758-2580-4a67-a143-5ab08d5fec65">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total_sum_05}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="460" y="0" width="30" height="19" printWhenGroupChanges="tipo_combustible" backcolor="#C1C5E8" uuid="2c2166a3-3120-4910-8ba9-742a6ecf42f0">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total_sum_06}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="490" y="0" width="30" height="19" printWhenGroupChanges="tipo_combustible" backcolor="#C1C5E8" uuid="61347547-ad6e-4a6c-a1e4-316c074a648b">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total_sum_07}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="520" y="0" width="30" height="19" printWhenGroupChanges="tipo_combustible" backcolor="#C1C5E8" uuid="59ed1543-3a8d-408a-9bdc-f7ccd858efe9">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total_sum_08}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="550" y="0" width="30" height="19" printWhenGroupChanges="tipo_combustible" backcolor="#C1C5E8" uuid="f858a540-ea5b-494d-ac94-111d09924c4d">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total_sum_09}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="580" y="0" width="30" height="19" printWhenGroupChanges="tipo_combustible" backcolor="#C1C5E8" uuid="47524643-638f-4b70-85f6-fa5bd2f96ed8">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total_sum_10}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="610" y="0" width="30" height="19" printWhenGroupChanges="tipo_combustible" backcolor="#C1C5E8" uuid="2bbef212-e37d-4852-ba7d-84883cbb1871">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total_sum_11}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="640" y="0" width="30" height="19" printWhenGroupChanges="tipo_combustible" backcolor="#C1C5E8" uuid="cb9ba352-5093-4933-b940-17054076c006">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total_sum_12}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="670" y="0" width="30" height="19" printWhenGroupChanges="tipo_combustible" backcolor="#C1C5E8" uuid="c69e840d-a3f1-4190-9441-6683326dbde2">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total_sum_13}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="700" y="0" width="30" height="19" printWhenGroupChanges="tipo_combustible" backcolor="#C1C5E8" uuid="1a8b74c5-0694-428c-97d4-af1627d432a4">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total_sum_14}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="730" y="0" width="30" height="19" printWhenGroupChanges="tipo_combustible" backcolor="#C1C5E8" uuid="1f5ca313-ad8c-4d62-b7ab-d9e2a89aaf20">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total_sum_15}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="760" y="0" width="30" height="19" printWhenGroupChanges="tipo_combustible" backcolor="#C1C5E8" uuid="3899c35e-8719-4919-9e00-f0d370259873">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total_sum_16}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="790" y="0" width="30" height="19" printWhenGroupChanges="tipo_combustible" backcolor="#C1C5E8" uuid="f8eb6e80-e82b-47f3-a676-9baf8f61c8af">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total_sum_17}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="820" y="0" width="30" height="19" printWhenGroupChanges="tipo_combustible" backcolor="#C1C5E8" uuid="90c97f2e-001a-4438-b3a2-36bd254aafa0">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total_sum_18}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="850" y="0" width="30" height="19" printWhenGroupChanges="tipo_combustible" backcolor="#C1C5E8" uuid="3dd855d9-622b-47ff-9a61-14e03aea313b">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total_sum_19}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="880" y="0" width="30" height="19" printWhenGroupChanges="tipo_combustible" backcolor="#C1C5E8" uuid="4cfe9a72-2eaa-43ba-b904-f12706754a8e">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total_sum_20}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="910" y="0" width="30" height="19" printWhenGroupChanges="tipo_combustible" backcolor="#C1C5E8" uuid="7a139005-5276-4738-a783-239f67062269">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total_sum_21}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="940" y="0" width="30" height="19" printWhenGroupChanges="tipo_combustible" backcolor="#C1C5E8" uuid="d0ed262d-d265-4283-b4e1-a9235f0182d8">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total_sum_22}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="970" y="0" width="30" height="19" printWhenGroupChanges="tipo_combustible" backcolor="#C1C5E8" uuid="385c0d39-c03f-4664-81d7-b98047c4a168">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total_sum_23}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="1000" y="0" width="30" height="19" printWhenGroupChanges="tipo_combustible" backcolor="#C1C5E8" uuid="f322dd00-b4d0-45ce-926b-d707a676bb21">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total_sum_24}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="1030" y="0" width="30" height="19" printWhenGroupChanges="tipo_combustible" backcolor="#C1C5E8" uuid="b43a075d-cd4f-4ed7-b73d-926cc58936a9">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total_sum_25}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="1060" y="0" width="30" height="19" printWhenGroupChanges="tipo_combustible" backcolor="#C1C5E8" uuid="f1261ba3-ca07-466e-b92b-70eda00f07f9">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total_sum_26}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="1090" y="0" width="30" height="19" printWhenGroupChanges="tipo_combustible" backcolor="#C1C5E8" uuid="e6e5bca1-643d-439a-b31e-016f41779b86">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total_sum_27}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="1120" y="0" width="30" height="19" printWhenGroupChanges="tipo_combustible" backcolor="#C1C5E8" uuid="85bd5673-ce83-4fd4-bae9-6aa89c464a35">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total_sum_28}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="1150" y="0" width="30" height="19" printWhenGroupChanges="tipo_combustible" backcolor="#C1C5E8" uuid="a8101c79-19d5-4bd4-b168-5396e6e0dc88">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total_sum_29}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="1180" y="0" width="30" height="19" printWhenGroupChanges="tipo_combustible" backcolor="#C1C5E8" uuid="96ba7b0d-9894-4683-a603-ffe1f352e8b4">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total_sum_30}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="1210" y="0" width="30" height="19" printWhenGroupChanges="tipo_combustible" backcolor="#C1C5E8" uuid="b14318bd-d33f-44e0-b162-9882dba7d9e7">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total_sum_31}]]></textFieldExpression>
+			</textField>
 		</band>
-	</lastPageFooter>
+	</columnFooter>
 </jasperReport>
