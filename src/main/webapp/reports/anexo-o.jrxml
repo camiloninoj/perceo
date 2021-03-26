@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="anexo-t" pageWidth="800" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="760" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" isIgnorePagination="true" uuid="0e3c5604-b98f-4db3-ae47-dbf959438b83">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Perceo BD Adapter"/>
+	<parameter name="unidadSigla" class="java.lang.String"/>
+	<parameter name="ano" class="java.lang.String"/>
+	<parameter name="mes" class="java.lang.String"/>
+	<parameter name="tipoCombustible" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT brigada_nombre, 
+	unidad_nombre, 
+	gestor_flota,
+	oficials4,
+	ejecutivo,
+	ano, 
+	mes_nombre, 
+	tipo_combustible,
+	id,
+	fecha, 
+	placa_civil, 
+	numero_venta, 
+	cantidad,	
+	(select sum(cantidad) 
+		from reporte_detallado 
+		where unidad_sigla = $P{unidadSigla}
+			and ano = $P{ano}
+			and mes =  $P{mes}
+			and tipo_combustible = $P{tipoCombustible} ) as total
+FROM reporte_detallado
+where unidad_sigla = $P{unidadSigla}
+	and ano = $P{ano}
+	and mes =  $P{mes}
+	and tipo_combustible = $P{tipoCombustible} 
+order by fecha]]>
+	</queryString>
+	<field name="brigada_nombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="brigada_nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="brigada_nombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="reporte_detallado"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="unidad_nombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="unidad_nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="unidad_nombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="reporte_detallado"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="gestor_flota" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="gestor_flota"/>
+		<property name="com.jaspersoft.studio.field.label" value="gestor_flota"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="reporte_detallado"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="oficials4" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="oficials4"/>
+		<property name="com.jaspersoft.studio.field.label" value="oficials4"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="reporte_detallado"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ejecutivo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ejecutivo"/>
+		<property name="com.jaspersoft.studio.field.label" value="ejecutivo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="reporte_detallado"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ano" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ano"/>
+		<property name="com.jaspersoft.studio.field.label" value="ano"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="reporte_detallado"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mes_nombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="mes_nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="mes_nombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="reporte_detallado"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipo_combustible" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="tipo_combustible"/>
+		<property name="com.jaspersoft.studio.field.label" value="tipo_combustible"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="reporte_detallado"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="reporte_detallado"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="fecha"/>
+		<property name="com.jaspersoft.studio.field.label" value="fecha"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="reporte_detallado"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="placa_civil" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="placa_civil"/>
+		<property name="com.jaspersoft.studio.field.label" value="placa_civil"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="reporte_detallado"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="numero_venta" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="numero_venta"/>
+		<property name="com.jaspersoft.studio.field.label" value="numero_venta"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="reporte_detallado"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cantidad" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="cantidad"/>
+		<property name="com.jaspersoft.studio.field.label" value="cantidad"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="reporte_detallado"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total" class="java.lang.Double"/>
+	<variable name="cantidad_total" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{cantidad}]]></variableExpression>
+	</variable>
+	<variable name="saldo" class="java.lang.Double">
+		<variableExpression><![CDATA[$V{saldo}-$F{cantidad}]]></variableExpression>
+		<initialValueExpression><![CDATA[$F{total}]]></initialValueExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="169" splitType="Stretch">
+			<staticText>
+				<reportElement x="300" y="0" width="190" height="30" uuid="5ced1303-c132-4eaf-8097-88e0278d1616"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="22"/>
+				</textElement>
+				<text><![CDATA[ANEXO O]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="29" width="100" height="20" forecolor="#FA0E0A" uuid="9ca5a58b-289f-4dbf-9836-f98a3ff23312"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<text><![CDATA[RESTRINGIDO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="49" width="280" height="20" forecolor="#000000" uuid="b53315d3-93cc-4f48-a3a8-a9501688b89f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<text><![CDATA[FUERZAS MILITARES DE COLOMBIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="69" width="280" height="20" forecolor="#000000" uuid="60586256-9df2-4a82-8c4d-ba58e3ccac4e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<text><![CDATA[EJÉRCITO NACIONAL]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="160" y="89" width="280" height="20" uuid="6f1a9640-cac4-45d0-9345-352aaaa465ab">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{brigada_nombre}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="50" y="29" width="110" height="130" uuid="6bf36ff6-9472-45b7-bd98-d829db90267e"/>
+				<imageExpression><![CDATA["../../reports/escudo.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="160" y="109" width="280" height="20" uuid="4dcc261a-c3a2-42d6-ac65-0bb1b9102fc7">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{unidad_nombre}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="160" y="129" width="280" height="20" forecolor="#000000" uuid="3adac415-255a-468e-a812-2c7ca3e3dd15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<text><![CDATA[ANEXTO "O"]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="160" y="149" width="440" height="20" uuid="b77a0cf5-ae8d-4394-9ddd-d788b600cb60">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Verdana"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CONSUMO DE  COMBUSTIBLE DEL MES DE "+$F{mes_nombre}+" DE "+$F{ano}+" - "+$F{tipo_combustible}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="62" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="10" y="40" width="20" height="22" backcolor="#C1C5E8" uuid="bdfa0334-a632-4102-98dc-55dfb5b3f1c7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<text><![CDATA[No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="30" y="40" width="80" height="22" backcolor="#C1C5E8" uuid="59dcbfb7-0e05-496a-a676-68a75f46361b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<text><![CDATA[FECHA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="110" y="40" width="100" height="22" backcolor="#C1C5E8" uuid="16d90118-3831-4724-b003-127cf8bdcd99"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<text><![CDATA[ALTAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="310" y="40" width="100" height="22" backcolor="#C1C5E8" uuid="0c5681fe-14b9-4a4b-a8c3-17f6b2ed7c7c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<text><![CDATA[No. SERIE / TRANSACCION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="210" y="40" width="100" height="22" backcolor="#C1C5E8" uuid="ab3d08ae-353b-4f25-bb48-cc69d6752e55"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<text><![CDATA[SUMINISTRADO
+(PLACA VEHICULO)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="410" y="40" width="60" height="22" backcolor="#C1C5E8" uuid="2f9b0aa4-b632-4dd5-b483-4a639af0e7cd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<text><![CDATA[CANTIDAD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="470" y="40" width="60" height="22" backcolor="#C1C5E8" uuid="27cac0ba-6b6c-42dd-a330-9729f32f61ec"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<text><![CDATA[SALDO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="530" y="40" width="110" height="22" backcolor="#C1C5E8" uuid="2db7a39a-aa42-43c5-a336-1b8cdd8d7350"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<text><![CDATA[CONDUCTOR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="640" y="40" width="110" height="22" backcolor="#C1C5E8" uuid="f817cd0d-1f6f-454a-8e4d-b8fc8d30c30d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<text><![CDATA[FIRMA]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="110" y="0" width="100" height="20" uuid="d7416e25-3ff2-473c-8f58-5fe5b5b49329">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="0" width="80" height="20" uuid="173a8acd-de6a-4928-8b0c-c6c6efa7258c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="0" width="20" height="20" uuid="5f2e42b7-520f-49f3-90d5-f12ec177e5a2"/>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="210" y="0" width="100" height="20" uuid="a72e8f52-9f5f-44f6-bb01-5beeea52f109">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{placa_civil}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="310" y="0" width="100" height="20" uuid="1b1ae356-1935-4adc-9157-9b6914dc825d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{numero_venta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="0" width="60" height="20" uuid="6044547e-59b3-4deb-bc6d-2356d742ee9e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cantidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="470" y="0" width="60" height="20" uuid="04605644-8cda-4fe1-83e6-ed84e1eb9602">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{saldo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="530" y="0" width="110" height="20" uuid="0f0b2ce6-7691-45c2-823d-f3c4e38183b7">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="640" y="0" width="110" height="20" uuid="9056fbac-ed27-4dc5-b4ee-b73734381a5c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="202" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement x="45" y="181" width="100" height="20" uuid="c3325fa8-41b1-4a2d-a7af-69395b036298"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<text><![CDATA[GESTOR DE FLOTA]]></text>
+			</staticText>
+			<line direction="BottomUp">
+				<reportElement x="1" y="179" width="190" height="1" uuid="c3c1d58d-26f9-4387-bff5-2dd1f6e1fe1a"/>
+			</line>
+			<textField>
+				<reportElement x="0" y="157" width="190" height="20" uuid="81b663dc-0419-4047-b8eb-8556db87cd1c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{gestor_flota}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="320" y="180" width="100" height="20" uuid="0914fb6f-3aa5-4005-bb22-d159b70749c8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<text><![CDATA[OFICIAL S-4]]></text>
+			</staticText>
+			<line direction="BottomUp">
+				<reportElement x="270" y="178" width="190" height="1" uuid="8bee18e8-e56c-460e-8137-2ca9961c4e58"/>
+			</line>
+			<textField>
+				<reportElement x="270" y="157" width="190" height="20" uuid="1b97c36c-adb4-442a-8a2d-2cba681c8694"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{oficials4}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="555" y="182" width="200" height="20" uuid="873b4199-0adf-49c5-977e-09f34f2ef5d5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<text><![CDATA[EJECUTIVO Y SEGUNDO COMANDANTE]]></text>
+			</staticText>
+			<line direction="BottomUp">
+				<reportElement x="563" y="180" width="190" height="1" uuid="f45dc280-16be-4f82-b8f9-127ab7806f89"/>
+			</line>
+			<textField>
+				<reportElement x="560" y="159" width="190" height="20" uuid="f69e28d7-d81c-4762-b34f-8f3890e5f58c">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ejecutivo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="210" y="0" width="200" height="20" backcolor="#C1C5E8" uuid="1f0aaa2d-5adf-4096-a91e-3bede2200714"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="410" y="0" width="60" height="20" uuid="33bcd5de-5c3f-44f6-8386-5dc85d1a9876">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{cantidad_total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+</jasperReport>
