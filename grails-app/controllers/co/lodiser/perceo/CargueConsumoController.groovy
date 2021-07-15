@@ -11,6 +11,8 @@ class CargueConsumoController {
 
     CargueConsumoService cargueConsumoService
 
+    def assetResourceLocator
+
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
@@ -103,5 +105,14 @@ class CargueConsumoController {
         response.setHeader("Content-Disposition","attachment;filename="+cargue.nombreArchivo)
         response.outputStream << cargue.archivo
         response.outputStream.flush()
+    }
+
+    def downloadFormato(){
+        String fileName = "ejemplo_cargue_consumos.csv"
+        def resource = assetResourceLocator.findResourceForURI("/downloadable/$fileName")
+
+        response.setHeader("Content-Disposition","attachment;filename=${resource.filename}")
+        response.contentType = 'text/csv'
+        response.outputStream << resource.inputStream.bytes
     }
 }

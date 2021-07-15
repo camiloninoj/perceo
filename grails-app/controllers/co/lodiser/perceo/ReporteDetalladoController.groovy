@@ -7,6 +7,8 @@ class ReporteDetalladoController {
     // Export service provided by Export plugin
     def exportService
 
+    ReporteDetalladoService reporteDetalladoService
+
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
 
@@ -82,5 +84,9 @@ class ReporteDetalladoController {
         }
 
         respond ReporteDetallado.list(params), model:[reporteDetalladoCount: ReporteDetallado.count()]
+    }
+
+    def show(Long id) {
+        respond reporteDetalladoService.get(id)
     }
 }

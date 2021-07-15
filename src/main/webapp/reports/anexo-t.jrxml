@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="anexo-t" pageWidth="1300" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="1260" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" isIgnorePagination="true" uuid="0e3c5604-b98f-4db3-ae47-dbf959438b83">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="anexo-t" language="javascript" pageWidth="1310" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="1270" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" isIgnorePagination="true" uuid="0e3c5604-b98f-4db3-ae47-dbf959438b83">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Perceo BD Adapter"/>
 	<parameter name="unidadSigla" class="java.lang.String"/>
@@ -433,6 +433,17 @@ order by tipo_combustible desc]]>
 	</variable>
 	<variable name="total_sum_31" class="java.lang.Integer" calculation="Sum">
 		<variableExpression><![CDATA[$F{dia_31}]]></variableExpression>
+	</variable>
+	<variable name="total_vehiculo" class="java.lang.Integer" resetType="Column">
+		<variableExpression><![CDATA[$F{dia_01}+$F{dia_02}+$F{dia_03}+$F{dia_04}+$F{dia_05}+$F{dia_06}+$F{dia_07}+$F{dia_08}+$F{dia_09}+$F{dia_10}+$F{dia_11}+$F{dia_12}+$F{dia_13}+$F{dia_14}+$F{dia_15}+$F{dia_16}+$F{dia_17}+$F{dia_18}+$F{dia_19}+$F{dia_20}+$F{dia_21}+$F{dia_22}+$F{dia_23}+$F{dia_24}+$F{dia_25}+$F{dia_26}+$F{dia_27}+$F{dia_28}+$F{dia_29}+$F{dia_30}+$F{dia_31}]]></variableExpression>
+	</variable>
+	<variable name="total_tipocombustible" class="java.lang.Integer" resetType="Group" resetGroup="tipo_combustible">
+		<variableExpression><![CDATA[$V{tipo_combustible_sum_01}+$V{tipo_combustible_sum_02}+$V{tipo_combustible_sum_03}+$V{tipo_combustible_sum_04}+$V{tipo_combustible_sum_05}+$V{tipo_combustible_sum_06}+$V{tipo_combustible_sum_07}+$V{tipo_combustible_sum_08}+$V{tipo_combustible_sum_09}+$V{tipo_combustible_sum_10}+$V{tipo_combustible_sum_11}+$V{tipo_combustible_sum_12}+$V{tipo_combustible_sum_13}+$V{tipo_combustible_sum_14}+$V{tipo_combustible_sum_15}+$V{tipo_combustible_sum_16}+$V{tipo_combustible_sum_17}+$V{tipo_combustible_sum_18}+$V{tipo_combustible_sum_19}+$V{tipo_combustible_sum_20}+$V{tipo_combustible_sum_21}+$V{tipo_combustible_sum_22}+$V{tipo_combustible_sum_23}+$V{tipo_combustible_sum_24}+$V{tipo_combustible_sum_25}+$V{tipo_combustible_sum_26}+$V{tipo_combustible_sum_27}+$V{tipo_combustible_sum_28}+$V{tipo_combustible_sum_29}+$V{tipo_combustible_sum_30}+$V{tipo_combustible_sum_31}
+]]></variableExpression>
+	</variable>
+	<variable name="total_final" class="java.lang.Integer">
+		<variableExpression><![CDATA[$V{total_sum_01}+$V{total_sum_02}+$V{total_sum_03}+$V{total_sum_04}+$V{total_sum_05}+$V{total_sum_06}+$V{total_sum_07}+$V{total_sum_08}+$V{total_sum_09}+$V{total_sum_10}+$V{total_sum_11}+$V{total_sum_12}+$V{total_sum_13}+$V{total_sum_14}+$V{total_sum_15}+$V{total_sum_16}+$V{total_sum_17}+$V{total_sum_18}+$V{total_sum_19}+$V{total_sum_20}+$V{total_sum_21}+$V{total_sum_22}+$V{total_sum_23}+$V{total_sum_24}+$V{total_sum_25}+$V{total_sum_26}+$V{total_sum_27}+$V{total_sum_28}+$V{total_sum_29}+$V{total_sum_30}+$V{total_sum_31}
+]]></variableExpression>
 	</variable>
 	<group name="tipo_combustible" minHeightToStartNewPage="20">
 		<groupExpression><![CDATA[$F{tipo_combustible}]]></groupExpression>
@@ -950,6 +961,22 @@ order by tipo_combustible desc]]>
 					</textElement>
 					<textFieldExpression><![CDATA[$V{tipo_combustible_sum_31}]]></textFieldExpression>
 				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="1240" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="389d2612-6443-421c-b170-f8f06124a0f3">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineColor="#C1C5E8"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#C1C5E8"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement>
+						<font fontName="Verdana" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{total_tipocombustible}]]></textFieldExpression>
+				</textField>
 			</band>
 		</groupFooter>
 	</group>
@@ -1276,6 +1303,13 @@ order by tipo_combustible desc]]>
 				</textElement>
 				<text><![CDATA[31]]></text>
 			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1240" y="40" width="30" height="22" backcolor="#C1C5E8" uuid="62471170-9170-4338-ab9b-02a7f3172c02"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
@@ -1585,6 +1619,15 @@ order by tipo_combustible desc]]>
 					<font fontName="Verdana" size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{tipo_combustible}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="1240" y="0" width="30" height="20" printWhenGroupChanges="tipo_combustible" uuid="c1c67874-a705-425b-adc0-971c96ce452e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total_vehiculo}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
@@ -1931,6 +1974,15 @@ order by tipo_combustible desc]]>
 					<font fontName="Verdana" size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$V{total_sum_31}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="1240" y="0" width="30" height="19" printWhenGroupChanges="tipo_combustible" backcolor="#C1C5E8" uuid="5b882d51-d824-43fe-8b68-e6ca046cd4d0">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total_final}]]></textFieldExpression>
 			</textField>
 		</band>
 	</columnFooter>

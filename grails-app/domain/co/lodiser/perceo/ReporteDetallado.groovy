@@ -85,4 +85,8 @@ class ReporteDetallado {
         centroCostos nullable:false, blank: false
         equipo nullable:false, blank: false
     }
+
+    String toString(){
+        return placaMilitar+":"+fecha+"-"+cantidad
+    }
 }

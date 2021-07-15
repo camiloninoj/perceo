@@ -25,6 +25,7 @@
                 </g:eachError>
             </ul>
             </g:hasErrors>
+            <g:link action="downloadFormato"><g:message code="default.format.label" default="Descargar Formato" /></g:link>
             <g:uploadForm resource="${this.cargueVehiculo}" method="POST">
                 <fieldset class="form">
                     <f:all bean="cargueVehiculo" except="nombreArchivo, vehiculos" />

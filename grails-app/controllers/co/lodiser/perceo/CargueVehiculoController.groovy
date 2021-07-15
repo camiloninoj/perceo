@@ -6,6 +6,7 @@ import static org.springframework.http.HttpStatus.*
 
 class CargueVehiculoController {
 
+    def assetResourceLocator
     CargueVehiculoService cargueVehiculoService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
@@ -43,9 +44,7 @@ class CargueVehiculoController {
                             placaCivil: tokens[1],
                             centroCostos: tokens[2],
                             equipo: tokens[3],
-                            puntoMedidaConsumo: tokens[4],
-                            puntoMedidaKm: tokens[5],
-                            cliente: Cliente.findByUnidadSigla(tokens[6]),
+                            cliente: Cliente.findByUnidadSigla(tokens[4]),
                             tasaFalla: TasaFalla.findBySigla(tokens[0].charAt(0)))
                     )
                 }
@@ -99,5 +98,14 @@ class CargueVehiculoController {
         response.setHeader("Content-Disposition","attachment;filename="+cargue.nombreArchivo)
         response.outputStream << cargue.archivo
         response.outputStream.flush()
+    }
+
+    def downloadFormato(){
+        String fileName = "ejemplo_cargue_vehiculos.csv"
+        def resource = assetResourceLocator.findResourceForURI("/downloadable/$fileName")
+
+        response.setHeader("Content-Disposition","attachment;filename=${resource.filename}")
+        response.contentType = 'text/csv'
+        response.outputStream << resource.inputStream.bytes
     }
 }

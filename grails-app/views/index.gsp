@@ -30,11 +30,6 @@
             <li class="dropdown-item"><g:link controller="anexoO"><g:message code="anexoO.label" default="Anexo O"/></g:link></li>
         </ul>
     </li>
-    <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${message(code: 'usuarios.label', default: 'Usuarios')} <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-        </ul>
-    </li>
 </content>
 
 <div class="svg" role="presentation">
