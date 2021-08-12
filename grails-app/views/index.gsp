@@ -11,6 +11,8 @@
         <ul class="dropdown-menu">
             <li class="dropdown-item"><g:link controller="cliente"><g:message code="clientes.label" default="Clientes"/></g:link></li>
             <li class="dropdown-item"><g:link controller="tasaFalla"><g:message code="tasasFalla.label" default="Tasas de falla"/></g:link></li>
+            <li class="dropdown-item"><g:link controller="destino"><g:message code="destino.label" default="Destinos"/></g:link></li>
+            <li class="dropdown-item"><g:link controller="cargueDestino"><g:message code="cargueDestino.label" default="Cargue Destinos"/></g:link></li>
         </ul>
     </li>
     <li class="dropdown">

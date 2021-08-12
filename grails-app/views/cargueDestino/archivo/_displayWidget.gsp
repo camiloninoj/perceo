@@ -1,0 +1,1 @@
+<g:link action="downloadArchivo" resource="${bean}"><g:message code="default.download.label" default="Descargar" /></g:link>

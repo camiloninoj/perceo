@@ -47,7 +47,9 @@ class BootStrap {
 
         new Requestmap(url: '/cliente/**',configAttribute: 'ROLE_ADMIN').save()
         new Requestmap(url: '/tasaFalla/**',configAttribute: 'ROLE_ADMIN').save()
+        new Requestmap(url: '/destino/**',configAttribute: 'ROLE_ADMIN').save()
         new Requestmap(url: '/cargueVehiculo/**',configAttribute: 'ROLE_ADMIN').save()
+        new Requestmap(url: '/cargueDestino/**',configAttribute: 'ROLE_ADMIN').save()
         new Requestmap(url: '/vehiculo/**',configAttribute: 'ROLE_ADMIN').save()
         new Requestmap(url: '/cargueConsumo/**',configAttribute: 'ROLE_ADMIN').save()
         new Requestmap(url: '/consumo/**',configAttribute: 'ROLE_ADMIN').save()
@@ -58,9 +60,12 @@ class BootStrap {
 
         springSecurityService.clearCachedRequestmaps()
 
-        def admin = new Usuario(username:'admin',password:'p3R(30').save()
-
+        def admin = new Usuario(username:'admin',password:'11226117').save()
         UsuarioRol.create(admin, adminRole)
+
+        admin = Usuario.findByUsername('admin')
+        admin.password = '11226117'
+        admin.save()
     }
 
     def destroy = {
