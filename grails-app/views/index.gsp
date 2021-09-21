@@ -30,6 +30,7 @@
             <li class="dropdown-item"><g:link controller="reporteDetallado"><g:message code="reporteDetallado.label" default="Detallado de consumos"/></g:link></li>
             <li class="dropdown-item"><g:link controller="anexoT"><g:message code="anexoT.label" default="Anexo T"/></g:link></li>
             <li class="dropdown-item"><g:link controller="anexoO"><g:message code="anexoO.label" default="Anexo O"/></g:link></li>
+            <li class="dropdown-item"><g:link controller="anexoK"><g:message code="anexoK.label" default="Anexo K"/></g:link></li>
         </ul>
     </li>
 </content>

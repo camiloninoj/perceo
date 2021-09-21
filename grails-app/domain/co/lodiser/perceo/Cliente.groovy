@@ -22,6 +22,8 @@ class Cliente {
     String ejecutivoSigla
     String ejecutivoNombre
 
+    static hasMany = [vehiculos: Vehiculo, destinos:Destino]
+
     static constraints = {
         unidadSigla blank: false, nullable: false, unique: true
         unidadNombre blank: false, nullable: false

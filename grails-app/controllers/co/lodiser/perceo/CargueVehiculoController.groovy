@@ -2,6 +2,8 @@ package co.lodiser.perceo
 
 import grails.validation.ValidationException
 
+import java.text.NumberFormat
+
 import static org.springframework.http.HttpStatus.*
 
 class CargueVehiculoController {
@@ -39,14 +41,20 @@ class CargueVehiculoController {
                         toCsvReader([charset:'UTF-8',skipLines:1,separatorChar:';',batchSize:50])
 
                 reader.eachLine { tokens  ->
-                    cargueVehiculo.addToVehiculos(new Vehiculo(
-                            placaMilitar: tokens[0],
-                            placaCivil: tokens[1],
-                            centroCostos: tokens[2],
-                            equipo: tokens[3],
-                            cliente: Cliente.findByUnidadSigla(tokens[4]),
-                            tasaFalla: TasaFalla.findBySigla(tokens[0].charAt(0)))
-                    )
+                    Vehiculo vehiculo = Vehiculo.findByPlacaMilitar(tokens[0])
+
+                    if (!vehiculo){
+                        vehiculo = new Vehiculo()
+                    }
+                    vehiculo.placaMilitar = tokens[0]
+                    vehiculo.placaCivil = tokens[1]
+                    vehiculo.centroCostos = tokens[2]
+                    vehiculo.equipo = tokens[3]
+                    vehiculo.cliente = Cliente.findByUnidadSigla(tokens[4])
+                    vehiculo.tasaFalla = TasaFalla.findBySigla(tokens[0].charAt(0))
+                    vehiculo.kmInicial = NumberFormat.getInstance().parse(tokens[5])
+
+                    cargueVehiculo.addToVehiculos(vehiculo)
                 }
 
                 cargueVehiculoService.save(cargueVehiculo)

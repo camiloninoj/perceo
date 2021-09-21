@@ -56,6 +56,7 @@ class BootStrap {
         new Requestmap(url: '/reporteDetallado/**',configAttribute: 'ROLE_ADMIN').save()
         new Requestmap(url: '/anexoT/**',configAttribute: 'ROLE_ADMIN').save()
         new Requestmap(url: '/anexoO/**',configAttribute: 'ROLE_ADMIN').save()
+        new Requestmap(url: '/anexoK/**',configAttribute: 'ROLE_ADMIN').save()
         new Requestmap(url: '/jasper/**',configAttribute: 'ROLE_ADMIN').save()
 
         springSecurityService.clearCachedRequestmaps()

@@ -10,6 +10,7 @@ class Vehiculo {
     Integer puntoMedidaConsumo
     Integer puntoMedidaKm
     CargueVehiculo cargue
+    Double kmInicial = 0.0
 
     static belongsTo = [cliente: Cliente]
     static hasMany = [consumos: Consumo]
@@ -27,10 +28,12 @@ class Vehiculo {
         puntoMedidaConsumo nullable:true, min:0
         puntoMedidaKm nullable:true, min:0
         cargue nullable:true
+        kmInicial nullable:false
     }
 
     static mapping = {
         consumos cascade: 'all-delete-orphan'
+        kmInicial defaultValue: 0d
     }
 
     String toString(){

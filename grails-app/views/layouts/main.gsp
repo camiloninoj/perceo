@@ -11,7 +11,9 @@
 
     <asset:stylesheet src="application.css"/>
 
+    <g:javascript library='jquery' />
     <r:require module="export"/>
+
     <export:resource />
     <g:layoutHead/>
 </head>

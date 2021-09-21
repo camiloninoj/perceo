@@ -17,6 +17,7 @@ class Consumo {
 
     static hasOne = [reporte:ReporteDetallado]
     static belongsTo = [vehiculo: Vehiculo]
+    static hasMany = [rutas:Ruta]
 
     def afterInsert() {
         reporte = new ReporteDetallado()
