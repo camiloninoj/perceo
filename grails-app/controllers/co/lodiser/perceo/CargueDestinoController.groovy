@@ -42,12 +42,24 @@ class CargueDestinoController {
                         toCsvReader([charset:'UTF-8',skipLines:1,separatorChar:';',batchSize:50])
 
                 reader.eachLine { tokens ->
-                    cargueDestino.addToDestinos(new Destino(
-                            nombre: tokens[0],
-                            distancia: NumberFormat.getInstance().parse(tokens[1]),
-                            tiempoEstimado: tokens[2],
-                            cliente: Cliente.findByUnidadSigla(tokens[3]))
-                    )
+                    def destino = Destino.findByNombreAndCliente(tokens[0],Cliente.findByUnidadSigla(tokens[3]))
+
+                    if (!destino){
+                        destino = new Destino()
+                    }
+
+                    destino.nombre = tokens[0]
+                    destino.distancia = NumberFormat.getInstance().parse(tokens[1])
+                    destino.tiempoEstimado = NumberFormat.getInstance().parse(tokens[2])
+                    destino.cliente = Cliente.findByUnidadSigla(tokens[3])
+
+                    cargueDestino.addToDestinos(destino)
+
+                    if (!cargueDestino.validate()){
+                        cargueDestinos.errors.allErrors.each {
+                            println it
+                        }
+                    }
                 }
 
                 cargueDestinoService.save(cargueDestino)
