@@ -1,6 +1,7 @@
 package co.lodiser.perceo
 
 import grails.gorm.transactions.Transactional
+import org.springframework.transaction.annotation.Propagation
 
 import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.TimeUnit
@@ -16,18 +17,19 @@ class TablasAbordoService {
         println "Calculando rutas para "+clientes.size+" clientes"
         for (cli in clientes){
             def destinos = Destino.findAllByCliente(cli)
-            println "\tEncontrados "+destinos.size+" destinos para el cliente "+cli.unidadNombre
-            if (!destinos){
-                System.err.println("\t Terminando calculos para el cliente")
-                return
+            println "\tEncontrados "+destinos.size+" destinos y "+cli.vehiculos.size()+" vehiculos, para el cliente "+cli.unidadNombre
+            if (!destinos || !cli.vehiculos){
+                System.err.println("Terminando calculos para el cliente "+cli.unidadNombre)
+                continue
             }
+
             def consumosPendientes = Consumo.findAllByVehiculoInListAndRutasIsEmpty(cli.vehiculos)
             buscarConsumos(consumosPendientes, destinos)
         }
     }
 
     def buscarConsumos(def consumosPendientes, def destinos){
-        println "\t Encontrados "+consumosPendientes.size+" consumos pendientes"
+        println "\t\tEncontrados "+consumosPendientes.size+" consumos pendientes"
         for (con in consumosPendientes) {
             println "\t\tBuscando consumo anterior de vehiculo "+con.vehiculo
             def consSig = Consumo.findByVehiculoAndFechaGreaterThanOrderByFechaAscTop1(con.vehiculo, con.fecha)
@@ -39,7 +41,7 @@ class TablasAbordoService {
         }
     }
 
-    @Transactional
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
     def registrarRuta(Consumo inicio, Consumo fin, List<Destino> destinos) {
         def autonomia = inicio.cantidad * inicio.vehiculo.tasaFalla.tasa
         def candidatos = destinos.stream()
