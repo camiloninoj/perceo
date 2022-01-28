@@ -114,7 +114,7 @@ environments:
             password: "Asdf1234$"
             dbCreate: update
             url: jdbc:mysql://localhost:3306/perceo?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=GMT
-            logSql: true
+            logSql: false
     test:
         dataSource:
             dbCreate: update

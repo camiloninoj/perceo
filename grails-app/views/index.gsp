@@ -6,6 +6,13 @@
 </head>
 <body>
 <content tag="nav">
+
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${message(code: 'gerencial.label', default: 'Gerencial')} <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li class="dropdown-item"><g:link controller="dashboard"><g:message code="dashboard.label" default="Dashboard"/></g:link></li>
+        </ul>
+    </li>
     <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${message(code: 'parametros.label', default: 'Parametros')} <span class="caret"></span></a>
         <ul class="dropdown-menu">
