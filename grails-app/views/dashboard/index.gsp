@@ -21,6 +21,7 @@
             </g:if>
 
             <g:render template="consumoXtipoCombustible" bean="${consXtipoCombusData}"/>
+            <g:render template="distCombustible" bean="${distCombustibleData}"/>
         </div>
     </body>
 </html>
