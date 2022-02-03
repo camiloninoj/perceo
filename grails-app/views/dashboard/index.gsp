@@ -24,6 +24,7 @@
             <g:render template="consumoXeds" bean="${conXedsData}"/>
             <g:render template="consumoXvehiculo" bean="${consXvehiculoData}"/>
             <g:render template="consumoXmes" bean="${consXmesData}"/>
+            <g:render template="distCombustible" bean="${distCombustibleData}"/>
         </div>
     </body>
 </html>
