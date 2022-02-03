@@ -5,6 +5,13 @@
         <g:javascript library='jquery' />
         <gvisualization:apiImport/>
         <g:set var="entityName" value="${message(code: 'dashboard.label', default: 'Dashboard')}" />
+        <style type="text/css">
+            .chart-box > div {
+                display: inline-block;
+                border: 1px solid red;
+                margin:10px;
+            }
+        </style>
         <title><g:message code="default.list.label" args="[entityName]" /></title>
     </head>
     <body>
@@ -20,11 +27,14 @@
                 <div class="message" role="status">${flash.message}</div>
             </g:if>
 
-            <g:render template="consumoXtipoCombustible" bean="${consXtipoCombusData}"/>
-            <g:render template="consumoXeds" bean="${conXedsData}"/>
-            <g:render template="consumoXvehiculo" bean="${consXvehiculoData}"/>
-            <g:render template="consumoXmes" bean="${consXmesData}"/>
-            <g:render template="distCombustible" bean="${distCombustibleData}"/>
+            <div class="chart-box">
+                <g:render template="consumoXtipoCombustible" bean="${consXtipoCombusData}"/>
+                <g:render template="consumoXeds" bean="${conXedsData}"/>
+                <g:render template="consumoXvehiculo" bean="${consXvehiculoData}"/>
+                <g:render template="distCombustible" bean="${distCombustibleData}"/>
+                <g:render template="consumoXTipoVehiculo" bean="${consumoXTipoVehiculoData}"/>
+                <g:render template="consumoXmes" bean="${consXmesData}"/>
+            </div>
         </div>
     </body>
 </html>
