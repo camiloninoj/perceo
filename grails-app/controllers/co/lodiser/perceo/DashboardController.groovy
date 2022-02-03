@@ -14,7 +14,8 @@ class DashboardController {
          conXedsData:conXedsData(clienteId,mesAtras,hoy),
          consXvehiculoData:consXvehiculoData(clienteId,mesAtras,hoy),
          consXmesData:consXmesData(clienteId,mesAtras,hoy),
-         distCombustibleData:distCombustibleData(clienteId,mesAtras,hoy)
+         distCombustibleData:distCombustibleData(clienteId,mesAtras,hoy),
+         consumoXTipoVehiculoData:consumoXTipoVehiculoData(clienteId,mesAtras,hoy)
         ]
     }
 
@@ -79,5 +80,16 @@ class DashboardController {
                 "and fecha between :to and :from " +
                 "group by tipoCombustible ",
                 [clientId: clienteId, to: inicio, from: fin])
+    }
+
+    def consumoXTipoVehiculoData(def clienteId, def inicio, def fin) {
+        return Consumo.executeQuery("select t.tipoVehiculo, sum(c.cantidad) " +
+                "from Consumo c, TasaFalla t " +
+                "where c.vehiculo.cliente.id = :clienteId " +
+                "and c.vehiculo.tasaFalla = t " +
+                "and fecha between :to and :from " +
+                "group by t.tipoVehiculo ",
+                [clienteId: clienteId, to: inicio, from: fin])
+
     }
 }

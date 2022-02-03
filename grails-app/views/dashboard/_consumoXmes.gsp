@@ -7,7 +7,7 @@
 <gvisualization:columnCoreChart
     elementId="consumoXmes"
     title="${message(code: 'dashboard.consumoXmes.title', default: 'Consumo por mes')}"
-    width="${1200}"
+    width="${1600}"
     height="${240}"
     hAxis="${[title: 'Dia', titleColor: 'red']}"
     columns="${consXmesCols}"

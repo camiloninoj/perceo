@@ -4,10 +4,9 @@
 
 <gvisualization:pieCoreChart
     elementId="distCombustible"
-    title="DISTRIBUCIÓN DE COMBUSTIBLE"
-    width="${450}"
-    height="${300}"
-    is3D="${true}"
+    title="Distribución de combustible"
+    width="${400}"
+    height="${240}"
     columns="${distCombustibleCols}"
     data="${distCombustibleData}" />
 <div id="distCombustible"></div>
