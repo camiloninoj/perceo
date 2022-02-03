@@ -21,6 +21,9 @@
             </g:if>
 
             <g:render template="consumoXtipoCombustible" bean="${consXtipoCombusData}"/>
+            <g:render template="consumoXeds" bean="${conXedsData}"/>
+            <g:render template="consumoXvehiculo" bean="${consXvehiculoData}"/>
+            <g:render template="consumoXmes" bean="${consXmesData}"/>
         </div>
     </body>
 </html>
