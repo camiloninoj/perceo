@@ -27,6 +27,7 @@
                 <div class="message" role="status">${flash.message}</div>
             </g:if>
 
+            <g:render template="consumoXPeriodo" bean="${consumoXPeriodoData}"/>
             <div class="chart-box">
                 <g:render template="consumoXtipoCombustible" bean="${consXtipoCombusData}"/>
                 <g:render template="consumoXeds" bean="${conXedsData}"/>
