@@ -7,7 +7,8 @@ class DashboardController {
         def cal = Calendar.getInstance()
 
         def hoy = cal.getTime()
-        cal.add(Calendar.YEAR, -2) //En producción, principio de mes
+        cal.add(Calendar.YEAR, -2)
+        cal.add(Calendar.DAY_OF_WEEK, -2)//En producción, principio de mes
         def mesAtras = cal.getTime()
 
         [consXtipoCombusData     : consXtipoCombusData(clienteId, mesAtras, hoy),
@@ -95,20 +96,6 @@ class DashboardController {
     }
 
     def consumoXPeriodoData(def clienteId, def inicio, def fin) {
-        def totalConsumo = ReporteDetallado.executeQuery("select tipoCombustible, sum(cantidad) " +
-                "from ReporteDetallado rd " +
-                "where rd.consumo.vehiculo.cliente.id = :clienteId " +
-                "and rd.consumo.fecha between :from and :to " +
-                "group by tipoCombustible",
-                [clienteId: clienteId, from: inicio, to: fin])
-
-        def totalImporte = ReporteDetallado.executeQuery("select tipoCombustible, sum(importeTT) " +
-                "from ReporteDetallado rd " +
-                "where rd.consumo.vehiculo.cliente.id = :clienteId " +
-                "and rd.consumo.fecha between :from and :to " +
-                "group by tipoCombustible",
-                [clienteId: clienteId, from: inicio, to: fin])
-
         def totalGeneral = ReporteDetallado.executeQuery("select unidadSigla, sum(cantidad), sum(importeTT) " +
                 "from ReporteDetallado rd " +
                 "where rd.consumo.vehiculo.cliente.id = :clienteId " +
@@ -116,27 +103,18 @@ class DashboardController {
                 "group by unidadSigla",
                 [clienteId: clienteId, from: inicio, to: fin])
 
-        def strImporte = convertToString(totalImporte)
-        def strConsumo = convertToString(totalConsumo)
-
         def data = new ArrayList<ConsumoXPeriodoDataModel>();
         def consumoXPeriodoDataModel = new ConsumoXPeriodoDataModel()
 
+        consumoXPeriodoDataModel.setPeriodo(DateUtil.printTitlePeriodDate(inicio, fin))
         for (def obj in totalGeneral) {
             consumoXPeriodoDataModel.setUnidadSigla(obj[0])
             consumoXPeriodoDataModel.setTotalGalones(obj[1])
             consumoXPeriodoDataModel.setTotalPesos(obj[2])
         }
-        consumoXPeriodoDataModel.setTotalesConsumo(strConsumo)
-        consumoXPeriodoDataModel.setTotalesImporte(strImporte)
         data.add(consumoXPeriodoDataModel)
 
         return data
     }
 
-    def convertToString(List<Object[]> result) {
-        StringBuilder sb = new StringBuilder();
-        result.each { obj -> sb.append(obj[0]).append(": ").append(obj[1]).append("\n") }
-        return sb.toString();
-    }
 }
