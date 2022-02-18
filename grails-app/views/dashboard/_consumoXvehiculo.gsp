@@ -4,8 +4,8 @@
 <gvisualization:barCoreChart
     elementId="consumoXvehiculo"
     title="${message(code: 'dashboard.consumoXvehiculo.title', default: 'Consumo por vehiculo')}"
-    width="${400}"
-    height="${240}"
+    width="${580}"
+    height="${280}"
     vAxis="${[title: 'Vehiculo', titleColor: 'red']}"
     columns="${consXvehiculoCols}"
     data="${consXvehiculoData}" />
