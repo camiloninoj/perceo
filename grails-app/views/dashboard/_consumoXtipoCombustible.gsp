@@ -5,8 +5,8 @@
 <gvisualization:barCoreChart
     elementId="consumoXtipoCombustible"
     title="${message(code: 'dashboard.consXtipoCombus.title', default: 'Consumo por tipo combustible')}"
-    width="${400}"
-    height="${240}"
+    width="${580}"
+    height="${280}"
     vAxis="${[title: 'Tipo', titleColor: 'red']}"
     columns="${consXtipoCombusCols}"
     data="${consXtipoCombusData}" />
