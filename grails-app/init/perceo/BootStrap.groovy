@@ -27,15 +27,9 @@ class BootStrap {
         new TasaFalla(sigla:'R',tipoVehiculo:'Volqueta',tasa:10).save()
         new TasaFalla(sigla:'H',tipoVehiculo:'Buseta',tasa:15).save()
 
-        new Cliente(unidadSigla:'BAS03', unidadNombre:'BATALLON DE ASPC No. 3',
-                divisionSigla:'DIV03',divisionNombre:'TERCERA DIVISION',
-                brigadaSigla:'BR03',brigadaNombre:'TERCERA BRIGADA',
-                ciudad:'Cali',
-                gestorFlotaSigla:'CP.',gestorFlotaNombre:'VALENZUELA PINZON OSCAR MAURICIO',
-                oficialS4Sigla:'CT.', oficialS4Nombre:'AMAYA TOLEDO LUIS GUILLERMO',
-                ejecutivoSigla:'MY.',ejecutivoNombre:'GARCIA SANCHEZ JOHN A.').save()
-
         def adminRole = new Rol(authority: 'ROLE_ADMIN').save()
+        def gestorRole = new Rol(authority: 'ROLE_GESTOR').save()
+        def auditorRole = new Rol(authority: 'ROLE_AUDITOR').save()
 
         for (String url in [
                 '/', '/error', '/index', '/index.gsp', '/**/favicon.ico', '/shutdown',
@@ -45,29 +39,87 @@ class BootStrap {
             new Requestmap(url: url, configAttribute: 'permitAll').save()
         }
 
-        new Requestmap(url: '/cliente/**',configAttribute: 'ROLE_ADMIN').save()
-        new Requestmap(url: '/tasaFalla/**',configAttribute: 'ROLE_ADMIN').save()
-        new Requestmap(url: '/destino/**',configAttribute: 'ROLE_ADMIN').save()
-        new Requestmap(url: '/cargueVehiculo/**',configAttribute: 'ROLE_ADMIN').save()
-        new Requestmap(url: '/cargueDestino/**',configAttribute: 'ROLE_ADMIN').save()
-        new Requestmap(url: '/vehiculo/**',configAttribute: 'ROLE_ADMIN').save()
-        new Requestmap(url: '/cargueConsumo/**',configAttribute: 'ROLE_ADMIN').save()
-        new Requestmap(url: '/consumo/**',configAttribute: 'ROLE_ADMIN').save()
-        new Requestmap(url: '/reporteDetallado/**',configAttribute: 'ROLE_ADMIN').save()
-        new Requestmap(url: '/anexoT/**',configAttribute: 'ROLE_ADMIN').save()
-        new Requestmap(url: '/anexoO/**',configAttribute: 'ROLE_ADMIN').save()
-        new Requestmap(url: '/anexoK/**',configAttribute: 'ROLE_ADMIN').save()
-        new Requestmap(url: '/jasper/**',configAttribute: 'ROLE_ADMIN').save()
-        new Requestmap(url: '/dashboard/**',configAttribute: 'ROLE_ADMIN').save()
+        //GERENCIAL
+        new Requestmap(url: '/dashboard/**',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR,ROLE_AUDITOR').save()
 
-        springSecurityService.clearCachedRequestmaps()
+        //PARAMETROS
+        new Requestmap(url: '/cliente/index',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR,ROLE_AUDITOR').save()
+        new Requestmap(url: '/cliente/create',configAttribute: 'ROLE_ADMIN').save()
+        new Requestmap(url: '/cliente/save',configAttribute: 'ROLE_ADMIN').save()
+        new Requestmap(url: '/cliente/show/*',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR,ROLE_AUDITOR').save()
+        new Requestmap(url: '/cliente/edit/*',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR').save()
+        new Requestmap(url: '/cliente/update/*',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR').save()
+        new Requestmap(url: '/cliente/delete/*',configAttribute: 'ROLE_ADMIN').save()
+
+        new Requestmap(url: '/tasaFalla/**',configAttribute: 'ROLE_ADMIN').save()
+
+        new Requestmap(url: '/destino/index',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR,ROLE_AUDITOR').save()
+        new Requestmap(url: '/destino/create',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR').save()
+        new Requestmap(url: '/destino/save',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR').save()
+        new Requestmap(url: '/destino/show/*',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR,ROLE_AUDITOR').save()
+        new Requestmap(url: '/destino/edit/*',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR').save()
+        new Requestmap(url: '/destino/update/*',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR').save()
+        new Requestmap(url: '/destino/delete/*',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR').save()
+
+        new Requestmap(url: '/cargueDestino/index',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR').save()
+        new Requestmap(url: '/cargueDestino/create',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR').save()
+        new Requestmap(url: '/cargueDestino/save',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR').save()
+        new Requestmap(url: '/cargueDestino/show/*',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR').save()
+        new Requestmap(url: '/cargueDestino/delete/*',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR').save()
+
+        //REGISTROS
+        new Requestmap(url: '/vehiculo/index',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR,ROLE_AUDITOR').save()
+        new Requestmap(url: '/vehiculo/create',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR').save()
+        new Requestmap(url: '/vehiculo/save',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR').save()
+        new Requestmap(url: '/vehiculo/show/*',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR,ROLE_AUDITOR').save()
+        new Requestmap(url: '/vehiculo/edit/*',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR').save()
+        new Requestmap(url: '/vehiculo/update/*',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR').save()
+        new Requestmap(url: '/vehiculo/delete/*',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR').save()
+
+        new Requestmap(url: '/cargueVehiculo/index',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR').save()
+        new Requestmap(url: '/cargueVehiculo/create',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR').save()
+        new Requestmap(url: '/cargueVehiculo/save',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR').save()
+        new Requestmap(url: '/cargueVehiculo/show/*',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR').save()
+        new Requestmap(url: '/cargueVehiculo/delete/*',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR').save()
+
+        new Requestmap(url: '/consumo/index',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR,ROLE_AUDITOR').save()
+        new Requestmap(url: '/consumo/create',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR').save()
+        new Requestmap(url: '/consumo/save',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR').save()
+        new Requestmap(url: '/consumo/show/*',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR,ROLE_AUDITOR').save()
+        new Requestmap(url: '/consumo/edit/*',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR').save()
+        new Requestmap(url: '/consumo/update/*',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR').save()
+        new Requestmap(url: '/consumo/delete/*',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR').save()
+
+        new Requestmap(url: '/cargueConsumo/index',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR').save()
+        new Requestmap(url: '/cargueConsumo/create',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR').save()
+        new Requestmap(url: '/cargueConsumo/save',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR').save()
+        new Requestmap(url: '/cargueConsumo/show/*',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR').save()
+        new Requestmap(url: '/cargueConsumo/delete/*',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR').save()
+
+        //REPORTES
+        new Requestmap(url: '/reporteDetallado/index',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR,ROLE_AUDITOR').save()
+        new Requestmap(url: '/reporteDetallado/show',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR,ROLE_AUDITOR').save()
+
+        new Requestmap(url: '/anexoT/index',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR,ROLE_AUDITOR').save()
+        new Requestmap(url: '/anexoO/index',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR,ROLE_AUDITOR').save()
+
+        new Requestmap(url: '/anexoK/index',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR,ROLE_AUDITOR').save()
+        new Requestmap(url: '/anexoK/encontrarVehiculos',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR,ROLE_AUDITOR').save()
+
+        new Requestmap(url: '/jasper/**',configAttribute: 'ROLE_ADMIN,ROLE_GESTOR,ROLE_AUDITOR').save()
+
+        //SEGURIDAD
+        new Requestmap(url: '/usuario/**',configAttribute: 'ROLE_ADMIN').save()
 
         def admin = new Usuario(username:'admin',password:'11226117').save()
-        UsuarioRol.create(admin, adminRole)
+        def gestor = new Usuario(username:'gestor',password:'gestor').save()
+        def auditor = new Usuario(username:'auditor',password:'auditor').save()
 
-        admin = Usuario.findByUsername('admin')
-        admin.password = '11226117'
-        admin.save()
+        UsuarioRol.create(admin, adminRole)
+        UsuarioRol.create(gestor, gestorRole)
+        UsuarioRol.create(auditor, auditorRole)
+
+        springSecurityService.clearCachedRequestmaps()
     }
 
     def destroy = {

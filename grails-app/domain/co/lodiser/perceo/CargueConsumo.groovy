@@ -5,6 +5,7 @@ class CargueConsumo {
     String nombreArchivo
     Date fechaCargue = new Date()
     byte[] archivo
+    Cliente cliente
 
     static hasMany = [consumos: Consumo]
 
@@ -14,6 +15,7 @@ class CargueConsumo {
         }
         fechaCargue nullable:false
         archivo nullable:false, maxSize: 1024 * 1024 * 2
+        cliente nullable:true
     }
 
     String toString(){

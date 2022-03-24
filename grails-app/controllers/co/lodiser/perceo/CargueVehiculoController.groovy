@@ -15,6 +15,13 @@ class CargueVehiculoController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
+        def cliente = authenticatedUser.cliente
+        if (cliente){
+            respond CargueVehiculo.findAllByCliente(cliente,params),
+                    model:[clienteCount: CargueVehiculo.countByCliente(cliente),
+                           cliente:cliente]
+            return
+        }
         respond cargueVehiculoService.list(params), model:[cargueVehiculoCount: cargueVehiculoService.count()]
     }
 
@@ -23,10 +30,11 @@ class CargueVehiculoController {
     }
 
     def create() {
-        respond new CargueVehiculo(params)
+        respond new CargueVehiculo(params), model:[cliente:authenticatedUser.cliente]
     }
 
     def save(CargueVehiculo cargueVehiculo) {
+        def clienteAuth = authenticatedUser.cliente
         if (cargueVehiculo == null) {
             notFound()
             return
@@ -50,7 +58,7 @@ class CargueVehiculoController {
                     vehiculo.placaCivil = tokens[1]
                     vehiculo.centroCostos = tokens[2]
                     vehiculo.equipo = tokens[3]
-                    vehiculo.cliente = Cliente.findByUnidadSigla(tokens[4])
+                    vehiculo.cliente = clienteAuth?clienteAuth:Cliente.findByUnidadSigla(tokens[4])
                     vehiculo.tasaFalla = TasaFalla.findBySigla(tokens[0].charAt(0))
                     vehiculo.kmInicial = NumberFormat.getInstance().parse(tokens[5])
 

@@ -25,10 +25,10 @@
     <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${message(code: 'registros.label', default: 'Registros')} <span class="caret"></span></a>
         <ul class="dropdown-menu">
-            <li class="dropdown-item"><g:link controller="cargueVehiculo"><g:message code="cargueVehiculo.label" default="Cargue de vehículos"/></g:link></li>
             <li class="dropdown-item"><g:link controller="vehiculo"><g:message code="vehiculos.label" default="Vehículos"/></g:link></li>
-            <li class="dropdown-item"><g:link controller="cargueConsumo"><g:message code="cargueConsumo.label" default="Cargue de consumos"/></g:link></li>
+            <li class="dropdown-item"><g:link controller="cargueVehiculo"><g:message code="cargueVehiculo.label" default="Cargue de vehículos"/></g:link></li>
             <li class="dropdown-item"><g:link controller="consumo"><g:message code="consumo.label" default="Consumos"/></g:link></li>
+            <li class="dropdown-item"><g:link controller="cargueConsumo"><g:message code="cargueConsumo.label" default="Cargue de consumos"/></g:link></li>
         </ul>
     </li>
     <li class="dropdown">
@@ -38,6 +38,13 @@
             <li class="dropdown-item"><g:link controller="anexoT"><g:message code="anexoT.label" default="Anexo T"/></g:link></li>
             <li class="dropdown-item"><g:link controller="anexoO"><g:message code="anexoO.label" default="Anexo O"/></g:link></li>
             <li class="dropdown-item"><g:link controller="anexoK"><g:message code="anexoK.label" default="Anexo K"/></g:link></li>
+        </ul>
+    </li>
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${message(code: 'seguridad.label', default: 'Seguridad')} <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li class="dropdown-item"><g:link controller="usuario"><g:message code="usuario.label" default="Usuarios"/></g:link></li>
+            <li class="dropdown-item"><g:link controller="logoff"><g:message code="logoff.label" default="Cerrar sesión"/></g:link></li>
         </ul>
     </li>
 </content>

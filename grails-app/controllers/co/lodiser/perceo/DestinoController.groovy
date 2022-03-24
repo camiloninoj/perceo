@@ -11,6 +11,11 @@ class DestinoController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
+        def cliente = authenticatedUser.cliente
+        if (cliente){
+            respond Destino.findAllByCliente(cliente,params), model:[clienteCount: Destino.countByCliente(cliente)]
+            return
+        }
         respond destinoService.list(params), model:[destinoCount: destinoService.count()]
     }
 
@@ -19,7 +24,7 @@ class DestinoController {
     }
 
     def create() {
-        respond new Destino(params)
+        respond new Destino(params), model:[cliente:authenticatedUser.cliente]
     }
 
     def save(Destino destino) {
@@ -45,7 +50,7 @@ class DestinoController {
     }
 
     def edit(Long id) {
-        respond destinoService.get(id)
+        respond destinoService.get(id), model:[cliente:authenticatedUser.cliente]
     }
 
     def update(Destino destino) {

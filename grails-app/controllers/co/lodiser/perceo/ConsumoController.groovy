@@ -11,6 +11,12 @@ class ConsumoController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
+        def cliente = authenticatedUser.cliente
+        if (cliente){
+            respond Consumo.findAllByVehiculoInList(cliente.vehiculos,params),
+                    model:[clienteCount: Consumo.countByVehiculoInList(cliente.vehiculos)]
+            return
+        }
         respond consumoService.list(params), model:[detalleConsumoCount: consumoService.count()]
     }
 
@@ -19,7 +25,7 @@ class ConsumoController {
     }
 
     def create() {
-        respond new Consumo(params)
+        respond new Consumo(params), model:[vehiculos: authenticatedUser.cliente?.vehiculos]
     }
 
     def save(Consumo consumo) {
@@ -45,7 +51,7 @@ class ConsumoController {
     }
 
     def edit(Long id) {
-        respond consumoService.get(id)
+        respond consumoService.get(id), model:[vehiculos: authenticatedUser.cliente?.vehiculos]
     }
 
     def update(Consumo consumo) {

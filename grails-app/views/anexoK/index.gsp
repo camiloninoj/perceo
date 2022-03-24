@@ -23,11 +23,20 @@
                       format="PDF,XLSX"
                       name="Anexo-K">
 
-              <div class="fieldcontain">
-                  <label for="cliente">
-                      Cliente
+            <div class="fieldcontain">
+                <label for="cliente">Cliente
                       <span class="required-indicator">*</span>
-                  </label>
+                </label>
+                <g:if test="${cliente}">
+                  <g:select id="cliente"
+                          name="cliente.id"
+                          from="${cliente}"
+                          optionKey="id"
+                          noSelection="[null:' ']"
+                          required=""
+                          onchange="cambiarCliente(this.value);"/>
+                </g:if>
+                <g:else>
                   <g:select id="cliente"
                           name="cliente.id"
                           from="${co.lodiser.perceo.Cliente.list()}"
@@ -35,12 +44,13 @@
                           noSelection="[null:' ']"
                           required=""
                           onchange="cambiarCliente(this.value);"/>
+                </g:else>
                   <script>
                     function cambiarCliente(idCliente) {
                         jQuery.ajax({type:'POST',data:'idCliente='+idCliente, url:'/anexoK/encontrarVehiculos',success:function(data,textStatus){jQuery('#vehiculo').html(data);},error:function(XMLHttpRequest,textStatus,errorThrown){}});
                     }
                 </script>
-              </div>
+            </div>
                 <g:include action="show" id="1" />
               <div class="fieldcontain">
                 <label for="fechaInicio">

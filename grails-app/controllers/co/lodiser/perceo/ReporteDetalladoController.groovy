@@ -83,6 +83,13 @@ class ReporteDetalladoController {
             exportService.export(params.f, response.outputStream,ReporteDetallado.list(params), fields, labels, formatters, parameters)
         }
 
+        def cliente = authenticatedUser.cliente
+        if (cliente){
+            respond ReporteDetallado.findAll("from ReporteDetallado as rd where rd.consumo.vehiculo.cliente = :cliente",[cliente:cliente],params),
+                    model:[clienteCount: ReporteDetallado.executeQuery("select count(rd) from ReporteDetallado as rd where rd.consumo.vehiculo.cliente = :cliente",[cliente:cliente])]
+            return
+        }
+
         respond ReporteDetallado.list(params), model:[reporteDetalladoCount: ReporteDetallado.count()]
     }
 

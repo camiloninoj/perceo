@@ -5,6 +5,7 @@ class CargueVehiculo {
     String nombreArchivo
     Date fechaCargue = new Date()
     byte[] archivo
+    Cliente cliente
 
     static hasMany = [vehiculos: Vehiculo]
 
@@ -14,6 +15,7 @@ class CargueVehiculo {
         }
         fechaCargue nullable:false
         archivo nullable:false, maxSize: 1024 * 1024 * 2
+        cliente nullable:true
     }
 
     String toString(){

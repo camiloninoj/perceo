@@ -6,5 +6,6 @@ class AnexoOController {
     def exportService
 
     def index() {
+        model:[cliente: authenticatedUser.cliente]
     }
 }

@@ -11,6 +11,11 @@ class VehiculoController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
+        def cliente = authenticatedUser.cliente
+        if (cliente){
+            respond Vehiculo.findAllByCliente(cliente,params), model:[clienteCount: Vehiculo.countByCliente(cliente)]
+            return
+        }
         respond vehiculoService.list(params), model:[vehiculoCount: vehiculoService.count()]
     }
 
@@ -19,7 +24,7 @@ class VehiculoController {
     }
 
     def create() {
-        respond new Vehiculo(params)
+        respond new Vehiculo(params), model:[cliente: authenticatedUser.cliente]
     }
 
     def save(Vehiculo vehiculo) {
@@ -45,7 +50,7 @@ class VehiculoController {
     }
 
     def edit(Long id) {
-        respond vehiculoService.get(id)
+        respond vehiculoService.get(id), model:[cliente: authenticatedUser.cliente]
     }
 
     def update(Vehiculo vehiculo) {

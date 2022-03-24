@@ -11,7 +11,12 @@ class ClienteController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond clienteService.list(params), model:[clienteCount: clienteService.count()]
+        def cliente = authenticatedUser.cliente
+        if (cliente){
+            respond Collections.singletonList(cliente), model:[clienteCount: 1]
+            return
+        }
+        respond Cliente.list(params), model:[clienteCount: Cliente.count()]
     }
 
     def show(Long id) {

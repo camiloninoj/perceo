@@ -17,6 +17,12 @@ class CargueConsumoController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
+        def cliente = authenticatedUser.cliente
+        if (cliente){
+            respond CargueConsumo.findAllByCliente(cliente,params),
+                    model:[clienteCount: CargueConsumo.countByCliente(cliente)]
+            return
+        }
         respond cargueConsumoService.list(params), model:[cargueConsumoCount: cargueConsumoService.count()]
     }
 
@@ -25,10 +31,11 @@ class CargueConsumoController {
     }
 
     def create() {
-        respond new CargueConsumo(params)
+        respond new CargueConsumo(params), model:[cliente:authenticatedUser.cliente]
     }
 
     def save(CargueConsumo cargueConsumo) {
+        def clienteAuth = authenticatedUser.cliente
         if (cargueConsumo == null) {
             notFound()
             return
@@ -45,7 +52,7 @@ class CargueConsumoController {
                 reader.eachLine { tokens ->
                     cargueConsumo.addToConsumos(new Consumo(
                             fecha: new SimpleDateFormat('dd/MM/yyyy').parse(tokens[0]),
-                            vehiculo: Vehiculo.findByPlacaCivil(tokens[1]),
+                            vehiculo: clienteAuth?Vehiculo.findByPlacaCivilAndCliente(tokens[1],clienteAuth):Vehiculo.findByPlacaCivil(tokens[1]),
                             tipoCombustible: tokens[2],
                             vlrUnit: tokens[3],
                             cantidad: NumberFormat.getInstance().parse(tokens[4]),

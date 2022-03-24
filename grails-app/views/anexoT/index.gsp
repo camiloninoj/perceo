@@ -23,9 +23,16 @@
                       name="Anexo-T">
               <div class="fieldcontain">
                   <label for="unidadSigla">Cliente</label>
+                  <g:if test="${cliente}">
+                  <g:select name="unidadSigla"
+                          from="${cliente}"
+                          optionKey="unidadSigla" />
+                  </g:if>
+                  <g:else>
                   <g:select name="unidadSigla"
                           from="${co.lodiser.perceo.Cliente.list()}"
                           optionKey="unidadSigla" />
+                  </g:else>
               </div>
               <div class="fieldcontain">
                 <label for="mes">Mes</label>
